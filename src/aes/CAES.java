@@ -1,7 +1,23 @@
 package aes;
 
+
+
 public class CAES 
 {
+	// 密钥长度
+	private int key_len = 0;		
+	
+	// 加密轮次
+	private int round = 0;
+	
+	// 分块长度：4 个 int，相当于 128 bits
+	private int block_size = 4;
+	
+	// 原始密钥
+	private byte orign_key[] = null;
+	
+	// 原始密钥转换后的密钥
+	private int W[] = null;
 	
 	private final int sbox[] =
 		{
@@ -38,5 +54,78 @@ public class CAES
 				0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68,
 				0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16
 		};
+	
+	
+	
+	
+	
+	
+	public CAES(AES_KEY_LEN len, byte key[]) throws CAESException
+	{		
+		// 1、根据输入的密钥长度，初始化密钥长度、加密轮次
+		switch (len)
+		{
+		case AES_128:
+			// 密钥长度 4 个 int，相当于 128 bits
+			key_len = 4;
+			// 加密轮次：10
+			round = 10;
+			break;
+			
+		case AES_192:
+			// 密钥长度 6 个 int，相当于 192 bits
+			key_len = 6;
+			// 加密轮次：12
+			round = 12;
+			break;
+			
+		case AES_256:
+		default:
+			// 密钥长度 8 个 int，相当于 256 bits
+			key_len = 8;
+			// 加密轮次：14
+			round = 14;
+			break;						
+		}
+		
+		// 2、初始化原始密钥
+		if (null == key)
+		{
+			throw new CAESException("key is null");
+		}
+		
+		// 1个 int， 4个 byte
+		if (key.length != (key_len * 4))
+		{
+			String s = String.format("key len(%d) is not eaqual %s", key.length, len.toString()); 
+					
+			throw new CAESException(s);
+		}
+		
+		orign_key = new byte[key_len * 4];
+		
+		System.arraycopy(key, 0, orign_key, 0, key_len * 4);
+		
+		// 3. 生成工作密钥
+		generateWorkKey();
+	}
+	
+	
+	private int generateWorkKey()
+	{
+		int temp[] = new int[4];
+		
+		int i, j;
+		
+		for (i = 0; i < 4; ++i)
+		{
+			for (j = 0; j < 4; ++j)
+			{
+				
+			}
+		}
+
+		return 0;
+	}
 
 }
