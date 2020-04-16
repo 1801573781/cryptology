@@ -35,5 +35,21 @@ public class CTest
 		
 		System.out.println(strMD5);
 		System.out.println(strSHA256);
+		
+		
+		byte a = (byte)0xfe;
+		int b = a;
+		int c = 0xff & a;
+		
+		int d = 0xfe;
+		byte e = (byte)d;
+		int f = e;
+		
+		System.out.printf("a = %d\n", a);
+		System.out.printf("b = %d\n", b);
+		System.out.printf("c = %d\n", c);				
+		System.out.printf("d = %d\n", d);
+		System.out.printf("e = %d\n", e);
+		System.out.printf("f = %d\n", f);
 	}
 }
