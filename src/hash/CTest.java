@@ -3,6 +3,8 @@
  */
 package hash;
 
+import aes.*;
+
 /**
  * @author lzb
  *
@@ -51,5 +53,25 @@ public class CTest
 		System.out.printf("d = %d\n", d);
 		System.out.printf("e = %d\n", e);
 		System.out.printf("f = %d\n", f);
+		
+		
+		byte key[] = 
+			{
+					0x01, 0x02, 0x03, 0x04,
+					0x05, 0x06, 0x07, 0x08,
+					0x09, 0x0a, 0x0b, 0x0c,
+					0x0d, 0x0e, 0x0f, 0x10
+			};
+		
+		WKey wkey = new WKey();
+		
+		try
+		{		
+			wkey.genWKey(AES_KEY_LEN.AES_128, key);
+		}
+		catch(CAESException ex)
+		{
+			System.out.println(ex.toString());
+		}
 	}
 }
