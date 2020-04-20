@@ -11,6 +11,9 @@ public class WKey
 	// 工作密钥，由原始密钥扩展而得
 	private int wkey[] = null;
 	
+	// 工作密钥长度
+	private int wkey_len = 0;
+	
 	// round const: 轮常量
 	private int rc[] =
 		{
@@ -55,7 +58,8 @@ public class WKey
 	{
 		assert(null != key);
 		
-		this.wkey = new int[64];
+		wkey_len = 45;
+		this.wkey = new int[wkey_len];
 		
 		genFirst4WKkey(key);
 
@@ -67,11 +71,13 @@ public class WKey
 		assert(null != key);
 		assert(null != wkey);
 		
-		int i, j;
+		int i, j;		 
 		
 		for (i = 0; i < 4; ++i)
 		{
-			wkey[i] = 0x0;			
+			wkey[i] = 0x0;	
+			
+			
 					
 			for (j = 0; j < 4; ++j)
 			{			 				
@@ -83,7 +89,7 @@ public class WKey
 				}
 			}
 			
-			System.out.printf("wkey[%d] = %d\n", i, wkey[i]);
+			System.out.printf("wkey[%d] = 0x%x\n", i, wkey[i]);
 		}
 		
 		return 0;
