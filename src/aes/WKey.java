@@ -1,5 +1,7 @@
 package aes;
 
+import logicalOper.*;
+
 public class WKey 
 {
 	// 原始密钥
@@ -58,10 +60,11 @@ public class WKey
 	{
 		assert(null != key);
 		
-		wkey_len = 45;
+		wkey_len = 44;
 		this.wkey = new int[wkey_len];
 		
 		genFirst4WKkey(key);
+		genTheOtherWKey();
 
 		return this.wkey;
 	}
@@ -77,19 +80,38 @@ public class WKey
 		{
 			wkey[i] = 0x0;	
 			
-			
-					
-			for (j = 0; j < 4; ++j)
-			{			 				
-				wkey[i] |= (0xff & key[j * 4 + i]);
-				
-				if (j < 3)
-				{				
-					wkey[i] = wkey[i] << 8;
-				}
-			}
+			wkey[i] = Calc.byte2Int(key[i], key[4 + i], key[8 + i], key[12 + i]);						
 			
 			System.out.printf("wkey[%d] = 0x%x\n", i, wkey[i]);
+		}				
+		
+		return 0;
+	}
+	
+	
+	private int genTheOtherWKey()
+	{
+		int i = 0;
+		int tmp;
+		
+		for (i = 4; i < this.wkey_len; ++i)
+		{
+			tmp = wkey[i - 1];
+			
+			if (0 == (i % 4))
+			{
+				// 1. 循环左移8位
+				tmp = Calc.rotateLeftShift(tmp);
+				
+				// 2. S盒变换
+				tmp = SBox.translate(tmp);
+				
+				// 3. XOR
+				tmp ^= this.rc[i / 4 - 1];
+			}
+			
+			// 异或
+			wkey[i] = wkey[i - 4] ^ tmp;
 		}
 		
 		return 0;

@@ -63,11 +63,15 @@ public class CTest
 					0x0d, 0x0e, 0x0f, 0x10
 			};
 		
+		int[] W = null;
+		
 		WKey wkey = new WKey();
 		
 		try
 		{		
-			wkey.genWKey(AES_KEY_LEN.AES_128, key);
+			W = wkey.genWKey(AES_KEY_LEN.AES_128, key);
+			
+			int m = 5;
 		}
 		catch(CAESException ex)
 		{

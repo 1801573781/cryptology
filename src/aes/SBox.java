@@ -1,11 +1,13 @@
 package aes;
 
+import logicalOper.Calc;
+
 public class SBox 
 {
 	// 按道理来说，这里应该是 unsigned char，但是 java 不支持这个类型
 	// 不纠结内存的占用，就用 int 来表示
 	// 用 byte 不是不可以，但是编程麻烦，比如 0xf2，还得写成：(byte) 0xf2
-	private final int sbox[] =
+	private final static int sbox[] =
 		{
 				0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5,				  
 				0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,				  
@@ -42,7 +44,7 @@ public class SBox
 		};
 	
 	
-	private final int sbox_inv[] = 
+	private final static int sbox_inv[] = 
 		{
 			  0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38,
 			  0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb,
@@ -79,19 +81,36 @@ public class SBox
 			};
 	
 	
-	public byte translate(byte x)
+	public static byte translate(byte b)
 	{
 		// x 是一个 byte，它的取值范围是 -128~127，所以所以先将之“与”上 0xff
-		int temp = 0xff & x;
+		int temp = 0xff & b;
 		
 		// 强制转换成 byte 类型上
 		return (byte) sbox[temp];
 	}
 	
-	public byte translate_inv(byte x)
+	
+	public static int translate(int x)
+	{
+		byte[] bs = Calc.int2Byte(x);
+		
+		assert(null != bs);
+		
+		int i = 0;
+		
+		for (i = 0; i < 4; ++i)
+		{
+			bs[i] = translate(bs[i]);
+		}
+		
+		return Calc.byte2Int(bs);
+	}
+	
+	public static byte translate_inv(byte b)
 	{
 		// x 是一个 byte，它的取值范围是 -128~127，所以所以先将之“与”上 0xff
-		int temp = 0xff & x;
+		int temp = 0xff & b;
 		
 		// 强制转换成 byte 类型上
 		return (byte) sbox_inv[temp];
