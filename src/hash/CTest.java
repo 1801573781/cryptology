@@ -4,6 +4,7 @@
 package hash;
 
 import aes.*;
+import logicalOper.*;
 
 /**
  * @author lzb
@@ -73,9 +74,20 @@ public class CTest
 			
 			int m = 5;
 		}
-		catch(CAESException ex)
+		catch(AESException ex)
 		{
 			System.out.println(ex.toString());
 		}
+		
+		
+		byte[] x = {1, 2, 3, 4, 5, 6};
+		
+		byte[] y = Shift.rotateLeftShift(x, 3);
+		
+		for (i = 0; i < y.length; ++i)
+		{
+			System.out.printf("y[%d] = %d\n", i, y[i]);
+		}
+		
 	}
 }

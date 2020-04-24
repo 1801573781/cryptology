@@ -2,10 +2,11 @@ package aes;
 
 
 
-public class CAES 
+
+public class AES 
 {
 	// 密钥长度
-	private int key_len = 0;		
+	private AES_KEY_LEN key_len = AES_KEY_LEN.AES_256;		
 	
 	// 加密轮次
 	private int round = 0;
@@ -60,69 +61,81 @@ public class CAES
 	
 	
 	
-	public CAES(AES_KEY_LEN len, byte key[]) throws CAESException
+	public AES(AES_KEY_LEN len, byte key[]) throws AESException
 	{		
-		// 1、根据输入的密钥长度，初始化密钥长度、加密轮次
-		switch (len)
-		{
-		case AES_128:
-			// 密钥长度 4 个 int，相当于 128 bits
-			key_len = 4;
-			// 加密轮次：10
-			round = 10;
-			break;
-			
-		case AES_192:
-			// 密钥长度 6 个 int，相当于 192 bits
-			key_len = 6;
-			// 加密轮次：12
-			round = 12;
-			break;
-			
-		case AES_256:
-		default:
-			// 密钥长度 8 个 int，相当于 256 bits
-			key_len = 8;
-			// 加密轮次：14
-			round = 14;
-			break;						
-		}
+		// 1. 初始化密钥长度
+		key_len = len;
 		
-		// 2、初始化原始密钥
-		if (null == key)
-		{
-			throw new CAESException("key is null");
-		}
+		// 2、根据输入的密钥长度，初始化加密轮次
+		initRound();
 		
-		// 1个 int， 4个 byte
-		if (key.length != (key_len * 4))
-		{
-			String s = String.format("key len(%d) is not eaqual %s", key.length, len.toString()); 
-					
-			throw new CAESException(s);
-		}
-		
-		orign_key = new byte[key_len * 4];
-		
-		System.arraycopy(key, 0, orign_key, 0, key_len * 4);
+		// 3、初始化原始密钥：主要是做合法性判断
+		initOriginKey(len, key);				
 		
 		// 3. 生成工作密钥
 		generateWorkKey();
 	}
 	
 	
-	private int generateWorkKey()
+	private int initRound()
 	{
-		int temp[] = new int[4];
-		
-		int i, j;
-		
-		for (i = 0; i < 4; ++i)
+		switch (key_len)
 		{
-			for (j = 0; j < 4; ++j)
-			{
-				
-			}
+		case AES_128:
+			// 密钥长度 4 个 int，相当于 128 bits			
+			// 加密轮次：10
+			round = 10;
+			break;
+			
+		case AES_192:
+			// 密钥长度 6 个 int，相当于 192 bits			
+			// 加密轮次：12
+			round = 12;
+			break;
+			
+		case AES_256:
+		default:
+			// 密钥长度 8 个 int，相当于 256 bits			
+			// 加密轮次：14
+			round = 14;
+			break;						
+		}
+		
+		return 0;
+	}
+	
+	
+	private int initOriginKey(AES_KEY_LEN len, byte key[]) throws AESException
+	{
+		if (null == key)
+		{
+			throw new AESException("key is null");
+		}
+		
+		// 1个 byte， 8个 bits
+		if ((key.length * 8) != key_len.len())
+		{
+			String s = String.format("key len(%d) is not eaqual %d", (key.length * 8), len.len()); 
+					
+			throw new AESException(s);
+		}
+		
+		orign_key = key;
+		
+		return 0;
+	}
+	
+	
+	private int generateWorkKey() throws AESException
+	{
+		WKey wkey = new WKey();
+		try
+		{		
+			W = wkey.genWKey(key_len, orign_key);
+		}
+		catch(AESException e)
+		{
+			throw e;
 		}
 
 		return 0;

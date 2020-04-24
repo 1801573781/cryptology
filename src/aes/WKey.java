@@ -25,20 +25,20 @@ public class WKey
 		};
 	
 	
-	public int[] genWKey(AES_KEY_LEN len, byte[] key) throws CAESException
+	public int[] genWKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
 		// 1. 合法性判断：key
 		if (null == key)
 		{
-			throw new CAESException("key is null");
+			throw new AESException("key is null");
 		}
 		
 		// 2. 合法性判断：len
 		if ((key.length * 8) != len.len())
 		{
-			String s = String.format("key len(%d) is not eaqual %s", (key.length * 8), len.toString()); 
+			String e = String.format("key len(%d) is not eaqual %s", (key.length * 8), len.toString()); 
 					
-			throw new CAESException(s);
+			throw new AESException(e);
 		}
 		
 		switch (len)
@@ -80,7 +80,7 @@ public class WKey
 		{
 			wkey[i] = 0x0;	
 			
-			wkey[i] = Calc.byte2Int(key[i], key[4 + i], key[8 + i], key[12 + i]);						
+			wkey[i] = IBT.byteArray2Int(key[i], key[4 + i], key[8 + i], key[12 + i]);						
 			
 			System.out.printf("wkey[%d] = 0x%x\n", i, wkey[i]);
 		}				
@@ -101,7 +101,7 @@ public class WKey
 			if (0 == (i % 4))
 			{
 				// 1. 循环左移8位
-				tmp = Calc.rotateLeftShift(tmp);
+				tmp = Shift.rotateLeftShift(tmp, 8);
 				
 				// 2. S盒变换
 				tmp = SBox.translate(tmp);
