@@ -38,6 +38,20 @@ public class Shift
 		return (byte)x;
 	}		
 	
+	// byte 左移
+	public static byte leftShift(byte b, int s)
+	{
+		assert(s >= 0);
+		assert(s < 8);
+		
+		
+		int x = 0xff | b;
+		
+		x = x << s;
+		
+		return (byte)x;
+	}		
+	
 	
 	// int 数组，循环左移
 	// 将 x[0] ... x[s-1] 放到 x[] 的队尾
