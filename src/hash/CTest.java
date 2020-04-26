@@ -94,5 +94,7 @@ public class CTest
 		System.out.printf("z = 0x%x\n", (0xff & z));
 		
 		System.out.println("hello IJ");
+
+		System.out.println("hello eclipse");
 	}
 }
