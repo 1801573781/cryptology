@@ -91,6 +91,8 @@ public class CTest
 		
 		byte z = Galois.mul((byte)0x3a, (byte)0x24);		
 		
-		System.out.printf("z = 0x%x", (0xff & z));
+		System.out.printf("z = 0x%x\n", (0xff & z));
+		
+		System.out.println("hello IJ");
 	}
 }
