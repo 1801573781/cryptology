@@ -89,18 +89,8 @@ public class CTest
 			System.out.printf("y[%d] = %d\n", i, y[i]);
 		}
 		
-		int h = 128;
-		int g = Galois.log2(h);
+		byte z = Galois.mul((byte)0x3a, (byte)0x24);		
 		
-		System.out.printf("log2(%d) = %d\n", h, g);
-		
-		byte p = 0b01100110;
-		
-		byte q = Galois.mul_base(p, h);
-		
-		int r = (0xff) & q;
-		
-		System.out.printf("q = %s\n", Integer.toBinaryString(r));
-		
+		System.out.printf("z = 0x%x", (0xff & z));
 	}
 }

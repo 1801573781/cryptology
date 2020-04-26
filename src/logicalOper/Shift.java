@@ -45,7 +45,7 @@ public class Shift
 		assert(s < 8);
 		
 		
-		int x = 0xff | b;
+		int x = 0xff & b;
 		
 		x = x << s;
 		
