@@ -100,5 +100,7 @@ public class CTest
 		d = Euclid.gcd(21, 999);
 
 		System.out.println(Integer.toString(d));
+
+		System.out.println("test");
 	}
 }
