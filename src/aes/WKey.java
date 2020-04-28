@@ -4,20 +4,20 @@ import logicalOper.*;
 
 public class WKey 
 {
-	// Ô­Ê¼ÃÜÔ¿
-	private byte origin_key[] = null;
+	// Ô­Ê¼ï¿½ï¿½Ô¿
+	private final byte[] origin_key = null;
 	
-	// Ô­Ê¼ÃÜÔ¿³¤¶È
+	// Ô­Ê¼ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½
 	AES_KEY_LEN origin_key_len = AES_KEY_LEN.AES_256;
 	
-	// ¹¤×÷ÃÜÔ¿£¬ÓÉÔ­Ê¼ÃÜÔ¿À©Õ¹¶øµÃ
-	private int wkey[] = null;
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Ô¿ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½
+	private int[] wkey = null;
 	
-	// ¹¤×÷ÃÜÔ¿³¤¶È
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½
 	private int wkey_len = 0;
 	
-	// round const: ÂÖ³£Á¿
-	private int rc[] =
+	// round const: ï¿½Ö³ï¿½ï¿½ï¿½
+	private final int[] rc =
 		{
 				0x01, 0x02, 0x04, 0x08,
 				0x10, 0x20, 0x40, 0x80,
@@ -27,13 +27,13 @@ public class WKey
 	
 	public int[] genWKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
-		// 1. ºÏ·¨ÐÔÅÐ¶Ï£ºkey
+		// 1. ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½key
 		if (null == key)
 		{
 			throw new AESException("key is null");
 		}
 		
-		// 2. ºÏ·¨ÐÔÅÐ¶Ï£ºlen
+		// 2. ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½len
 		if ((key.length * 8) != len.len())
 		{
 			String e = String.format("key len(%d) is not eaqual %s", (key.length * 8), len.toString()); 
@@ -100,17 +100,17 @@ public class WKey
 			
 			if (0 == (i % 4))
 			{
-				// 1. Ñ­»·×óÒÆ8Î»
+				// 1. Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8Î»
 				tmp = Shift.rotateLeftShift(tmp, 8);
 				
-				// 2. SºÐ±ä»»
+				// 2. Sï¿½Ð±ä»»
 				tmp = SBox.translate(tmp);
 				
 				// 3. XOR
 				tmp ^= this.rc[i / 4 - 1];
 			}
 			
-			// Òì»ò
+			// ï¿½ï¿½ï¿½
 			wkey[i] = wkey[i - 4] ^ tmp;
 		}
 		

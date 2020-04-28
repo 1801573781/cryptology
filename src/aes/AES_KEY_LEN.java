@@ -8,7 +8,7 @@ public enum AES_KEY_LEN
 	
 	private int key_len = 0;
 	
-	private AES_KEY_LEN(int m)
+	AES_KEY_LEN(int m)
 	{
 		key_len = m;
 	}

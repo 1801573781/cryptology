@@ -5,22 +5,22 @@ package aes;
 
 public class AES 
 {
-	// ÃÜÔ¿³¤¶È
+	// ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½
 	private AES_KEY_LEN key_len = AES_KEY_LEN.AES_256;		
 	
-	// ¼ÓÃÜÂÖ´Î
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
 	private int round = 0;
 	
-	// ·Ö¿é³¤¶È£º4 ¸ö int£¬Ïàµ±ÓÚ 128 bits
-	private int block_size = 4;
+	// ï¿½Ö¿é³¤ï¿½È£ï¿½4 ï¿½ï¿½ intï¿½ï¿½ï¿½àµ±ï¿½ï¿½ 128 bits
+	private final int block_size = 4;
 	
-	// Ô­Ê¼ÃÜÔ¿
-	private byte orign_key[] = null;
+	// Ô­Ê¼ï¿½ï¿½Ô¿
+	private byte[] orign_key = null;
 	
-	// Ô­Ê¼ÃÜÔ¿×ª»»ºóµÄÃÜÔ¿
-	private int W[] = null;
+	// Ô­Ê¼ï¿½ï¿½Ô¿×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿
+	private int[] W = null;
 	
-	private final int sbox[] =
+	private final int[] sbox =
 		{
 				0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5,				  
 				0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,				  
@@ -61,18 +61,18 @@ public class AES
 	
 	
 	
-	public AES(AES_KEY_LEN len, byte key[]) throws AESException
+	public AES(AES_KEY_LEN len, byte[] key) throws AESException
 	{		
-		// 1. ³õÊ¼»¯ÃÜÔ¿³¤¶È
+		// 1. ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½
 		key_len = len;
 		
-		// 2¡¢¸ù¾ÝÊäÈëµÄÃÜÔ¿³¤¶È£¬³õÊ¼»¯¼ÓÃÜÂÖ´Î
+		// 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
 		initRound();
 		
-		// 3¡¢³õÊ¼»¯Ô­Ê¼ÃÜÔ¿£ºÖ÷ÒªÊÇ×öºÏ·¨ÐÔÅÐ¶Ï
+		// 3ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 		initOriginKey(len, key);				
 		
-		// 3. Éú³É¹¤×÷ÃÜÔ¿
+		// 3. ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿
 		generateWorkKey();
 	}
 	
@@ -82,21 +82,21 @@ public class AES
 		switch (key_len)
 		{
 		case AES_128:
-			// ÃÜÔ¿³¤¶È 4 ¸ö int£¬Ïàµ±ÓÚ 128 bits			
-			// ¼ÓÃÜÂÖ´Î£º10
+			// ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ 4 ï¿½ï¿½ intï¿½ï¿½ï¿½àµ±ï¿½ï¿½ 128 bits			
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Î£ï¿½10
 			round = 10;
 			break;
 			
 		case AES_192:
-			// ÃÜÔ¿³¤¶È 6 ¸ö int£¬Ïàµ±ÓÚ 192 bits			
-			// ¼ÓÃÜÂÖ´Î£º12
+			// ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ 6 ï¿½ï¿½ intï¿½ï¿½ï¿½àµ±ï¿½ï¿½ 192 bits			
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Î£ï¿½12
 			round = 12;
 			break;
 			
 		case AES_256:
 		default:
-			// ÃÜÔ¿³¤¶È 8 ¸ö int£¬Ïàµ±ÓÚ 256 bits			
-			// ¼ÓÃÜÂÖ´Î£º14
+			// ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ 8 ï¿½ï¿½ intï¿½ï¿½ï¿½àµ±ï¿½ï¿½ 256 bits			
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Î£ï¿½14
 			round = 14;
 			break;						
 		}
@@ -105,14 +105,14 @@ public class AES
 	}
 	
 	
-	private int initOriginKey(AES_KEY_LEN len, byte key[]) throws AESException
+	private int initOriginKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
 		if (null == key)
 		{
 			throw new AESException("key is null");
 		}
 		
-		// 1¸ö byte£¬ 8¸ö bits
+		// 1ï¿½ï¿½ byteï¿½ï¿½ 8ï¿½ï¿½ bits
 		if ((key.length * 8) != key_len.len())
 		{
 			String s = String.format("key len(%d) is not eaqual %d", (key.length * 8), len.len()); 

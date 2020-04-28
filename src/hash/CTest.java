@@ -56,7 +56,7 @@ public class CTest
 		System.out.printf("f = %d\n", f);
 		
 		
-		byte key[] = 
+		byte[] key =
 			{
 					0x01, 0x02, 0x03, 0x04,
 					0x05, 0x06, 0x07, 0x08,
@@ -96,5 +96,9 @@ public class CTest
 		System.out.println("hello IJ");
 
 		System.out.println("hello eclipse");
+
+		d = Euclid.gcd(21, 999);
+
+		System.out.println(Integer.toString(d));
 	}
 }
