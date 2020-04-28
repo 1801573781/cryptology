@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 
 public class CSHA256 
 {
-	// ËÄ¸öÖÖ×Ó±äÁ¿
+	// ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½
 	private final int A = 0x6a09e667;
 	private final int B = 0xbb67ae85;
 	private final int C = 0x3c6ef372;
@@ -15,16 +15,16 @@ public class CSHA256
 	private final int H = 0x5be0cd19;		
 	    
 	
-	// ABCDEFGH µÄÁÙÊ±±äÁ¿    
+	// ABCDEFGH ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½    
 	private int Atemp, Btemp, Ctemp, Dtemp, Etemp, Ftemp, Gtemp, Htemp;
 	
-	// Êý¾Ý¿é´óÐ¡£¬µ¥Î»£º×Ö½Ú
+	// ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Ö½ï¿½
 	private int m_iBlockSize = 64;
 	
-	// µÚ2¶ÎÐèÒª²¹ÆëµÄ×Ö½ÚÊý£º8×Ö½Ú(64 bits)
+	// ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½8ï¿½Ö½ï¿½(64 bits)
 	private int m_iPaddingSize2 = 8;
 	    
-	private final int K[] =	
+	private final int[] K =
 		{
 				0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 
 				0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
@@ -46,7 +46,7 @@ public class CSHA256
 	
 	
 	
-	// ³õÊ¼»¯8¸öÁÙÊ±±äÁ¿
+	// ï¿½ï¿½Ê¼ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
     private void init()
     {
     	Atemp = A;
@@ -62,7 +62,7 @@ public class CSHA256
     	m_iPaddingSize2 = 8;
     }
     
-    private void mainLoop(int M[])
+    private void mainLoop(int[] M)
     {
         int T1, T2;
         
@@ -75,7 +75,7 @@ public class CSHA256
         int g = Gtemp;
         int h = Htemp;
         
-        int W[] = new int[64]; 
+        int[] W = new int[64];
         
         int i = 0;
         
@@ -116,52 +116,52 @@ public class CSHA256
     
     
     
-    // Ñ­»·ÓÒÒÆ
+    // Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private int rotateRight(int x, int s)
     { 	
     	return Integer.rotateRight(x, s);
     }
     
-    // ÓÒÒÆ
+    // ï¿½ï¿½ï¿½ï¿½
     private int rightShift(int x, int s)
     {    	
         return (x >>> s);
     }
     
-    // Ëã×Ó F1
+    // ï¿½ï¿½ï¿½ï¿½ F1
     private int F1(int x)
     {
     	return (rotateRight(x, 2) ^ rotateRight(x, 13) ^ rotateRight(x, 22));
     }    
  
-    // Ëã×Ó F2
+    // ï¿½ï¿½ï¿½ï¿½ F2
     private int F2(int x, int y, int z)
     {
     	return ((x & y) ^ (x & z) ^ (y & z));
     	//return ((x & y) | (x & z) | (y & z));
     }
     
-    // Ëã×Ó F3
+    // ï¿½ï¿½ï¿½ï¿½ F3
     private int F3(int x)
     {
     	return (rotateRight(x, 6) ^ rotateRight(x, 11) ^ rotateRight(x, 25));
     }    
 
-    // Ëã×Ó F4
+    // ï¿½ï¿½ï¿½ï¿½ F4
     private int F4(int x, int y, int z)
     {
     	return ((x & y) ^ ((~x) & z));
     	//return ((x & y) | ((~x) & z));
     }
     
-    // Ëã×Ó G1
+    // ï¿½ï¿½ï¿½ï¿½ G1
     private int G1(int x)
     {
     	return (rotateRight(x, 7) ^ rotateRight(x, 18) ^ rightShift(x, 3));
     }    
     
  
-    // Ëã×Ó G2
+    // ï¿½ï¿½ï¿½ï¿½ G2
     private int G2(int x)
     {
     	return (rotateRight(x, 17) ^ rotateRight(x, 19) ^ rightShift(x, 10));
@@ -169,23 +169,23 @@ public class CSHA256
 	
     
     /*
-     *Ìî³äº¯Êý
-     *´¦ÀíºóÓ¦Âú×ãbits¡Ô448(mod512),×Ö½Ú¾ÍÊÇbytes¡Ô56£¨mode64)
-     *Ìî³ä·½Ê½ÎªÏÈ¼ÓÒ»¸ö1,ÆäËüÎ»²¹Áã
-     *×îºó¼ÓÉÏ64Î»µÄÔ­À´³¤¶È     
+     *ï¿½ï¿½äº¯ï¿½ï¿½
+     *ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½bitsï¿½ï¿½448(mod512),ï¿½Ö½Ú¾ï¿½ï¿½ï¿½bytesï¿½ï¿½56ï¿½ï¿½mode64)
+     *ï¿½ï¿½ä·½Ê½Îªï¿½È¼ï¿½Ò»ï¿½ï¿½1,ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+     *ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½64Î»ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     
      */
 
     private int[] padding(String str)
     {
-    	//ÒÔ512Î»£¬64¸ö×Ö½ÚÎªÒ»×é
+    	//ï¿½ï¿½512Î»ï¿½ï¿½64ï¿½ï¿½ï¿½Ö½ï¿½ÎªÒ»ï¿½ï¿½
     	int num = ((str.length() + 8) / 64) + 1;
     	
-    	//64/4=16£¬ËùÒÔÓÐ16¸öÕûÊý
-        int strByte[] = new int[num * 16];
+    	//64/4=16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        int[] strByte = new int[num * 16];
               
         int i;
         
-        // È«²¿³õÊ¼»¯0
+        // È«ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½0
         for(i = 0; i < num * 16; ++i)
         {
             strByte[i] = 0;
@@ -193,15 +193,15 @@ public class CSHA256
         
         for(i = 0; i < str.length(); ++i)
         {
-        	// Ò»¸öÕûÊý´æ´¢ËÄ¸ö×Ö½Ú£¬Ð¡¶ËÐò
+        	// Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½Ä¸ï¿½ï¿½Ö½Ú£ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½
             strByte[i >> 2] |= str.charAt(i) << ((i % 4) * 8);
         }         
       
-        // Î²²¿Ìí¼Ó1
+        // Î²ï¿½ï¿½ï¿½ï¿½ï¿½1
         strByte[i >> 2] |= 0x80 << ((i % 4) * 8);
         
         
-        // Ìí¼ÓÔ­³¤¶È£¬³¤¶ÈÖ¸Î»µÄ³¤¶È£¬ËùÒÔÒª³Ë8£¬È»ºóÊÇÐ¡¶ËÐò£¬ËùÒÔ·ÅÔÚµ¹ÊýµÚ¶þ¸ö,ÕâÀï³¤¶ÈÖ»ÓÃÁË32Î»        
+        // ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸Î»ï¿½Ä³ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½8ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï³¤ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½32Î»        
         strByte[num * 16 - 2] = str.length() * 8;
             
         return strByte;
@@ -210,32 +210,32 @@ public class CSHA256
     
      private int[] padding2(String str)
      {
-    	 // ¼ÆËã str µÄ³¤¶È iLen£¨µ¥Î»ÊÇ ×Ö½Ú£©
+    	 // ï¿½ï¿½ï¿½ï¿½ str ï¿½Ä³ï¿½ï¿½ï¿½ iLenï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ ï¿½Ö½Ú£ï¿½
     	 int iLen = str.length();
     	 
-    	 // ¼ÆËã iLen mod 64 µÈÓÚ¶àÉÙ
+    	 // ï¿½ï¿½ï¿½ï¿½ iLen mod 64 ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½
     	 int iMod64 = iLen % m_iBlockSize;
     	 
-    	 // ¼ÆËãÐèÒª²¹ÆëµÄµÚÒ»¶Î×Ö½ÚÊý£¨56 - iMod64£©
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½56 - iMod64ï¿½ï¿½
     	 int iPaddingLen1 = (m_iBlockSize - m_iPaddingSize2) - iMod64;
     	 
-    	 // Èç¹ûÔ­À´µÄ³¤¶ÈÇ¡ºÃ iLen ¡Ô 56£¨mode64)£¬ÄÇÒ²µÃÔÙ²¹ÉÏ64×Ö½Ú¡£
+    	 // ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ç¡ï¿½ï¿½ iLen ï¿½ï¿½ 56ï¿½ï¿½mode64)ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½64ï¿½Ö½Ú¡ï¿½
     	 if (0 == iPaddingLen1)
     	 {
     		 iPaddingLen1 = 64;
     	 }
     	 
-    	 // ¼ÆËãËùÓÐ²¹ÆëºóµÄÊý¾ÝµÄ³¤¶È£¨µ¥Î»£º4×Ö½Ú/32 bits£¬ÒòÎªÊÇÒÔ int ¿ªÍ·µÄ£©
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ³ï¿½ï¿½È£ï¿½ï¿½ï¿½Î»ï¿½ï¿½4ï¿½Ö½ï¿½/32 bitsï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ int ï¿½ï¿½Í·ï¿½Ä£ï¿½
     	 int iNum = (iLen + iPaddingLen1 + m_iPaddingSize2) / 4;
     	 
-    	 // ¹¹½¨ËùÓÐ²¹ÆëºóµÄÊý¾Ý£ºÉêÇëÄÚ´æ
-    	 int iPaddingData[] = new int[iNum];  	     	     	 
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+    	 int[] iPaddingData = new int[iNum];
     	
-    	 // ¹¹½¨ËùÓÐ²¹ÆëºóµÄÊý¾Ý£º¸³Öµ¡ª¡ªÇ° iLen ×Ö½ÚµÈÓÚ str
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ç° iLen ï¿½Ö½Úµï¿½ï¿½ï¿½ str
     	 System.arraycopy(str.getBytes(), 0, iPaddingData, 0, iLen);
     	 
-    	 // ¹¹½¨ËùÓÐ²¹ÆëºóµÄÊý¾Ý£º¸³Öµ¡ª¡ªµÚ1¶Î²¹ÆëµÄÊý¾Ý£ºµÚ1¸ö×Ö½ÚÊÇ£º0x80£¬ÆäÓàÈ«ÊÇ0£»
-    	 char chPadding1[] = new char[iPaddingLen1];
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ç£ï¿½0x80ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½0ï¿½ï¿½
+    	 char[] chPadding1 = new char[iPaddingLen1];
     	 
     	 int i;    	 
     	 
@@ -250,10 +250,10 @@ public class CSHA256
     	 
     	 System.arraycopy(chPadding1, 0, iPaddingData, (iLen + 1), iPaddingLen1);
     	 
-    	 // ¹¹½¨ËùÓÐ²¹ÆëºóµÄÊý¾Ý£º¸³Öµ¡ª¡ªµÚ2¶Î²¹ÆëµÄÊý¾Ý£ºµ¹ÊýµÚ2¸ö int£¬ÆäÖµµÈÓÚ str µÄ³¤¶È£¬µ¥Î»ÊÇ bit£»
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ intï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ str ï¿½Ä³ï¿½ï¿½È£ï¿½ï¿½ï¿½Î»ï¿½ï¿½ bitï¿½ï¿½
     	 iPaddingData[iNum - 2] = iLen * 8;    	 
     	
-    	 // ¹¹½¨ËùÓÐ²¹ÆëºóµÄÊý¾Ý£º¸³Öµ¡ª¡ªµÚ2¶Î²¹ÆëµÄÊý¾Ý£º×îºó1¸ö int£¬ÆäÖµµÈÓÚ 0£»
+    	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ intï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½
     	 iPaddingData[iNum - 1] = 0;
            
          return iPaddingData;
@@ -324,7 +324,7 @@ public class CSHA256
      
      
      /*      
-      *ÕûÊý±ä³É16½øÖÆ×Ö·û´®
+      *ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½16ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
      */     
      private String changeHex(int a)
      {
@@ -356,7 +356,7 @@ public class CSHA256
          //for(i = 0; i < strByte.length/16; ++i)
          for(i = 0; i < intStr.length/16; ++i)
          {        
-         	int num[] = new int[16];        	        
+         	int[] num = new int[16];
          	
          	for (j = 0; j < 16; ++j)
          	{            

@@ -2,7 +2,7 @@ package logicalOper;
 
 public class IBT 
 {
-	// 4¸ö byte£¬×ª³É1¸ö int
+	// 4ï¿½ï¿½ byteï¿½ï¿½×ªï¿½ï¿½1ï¿½ï¿½ int
 	public static int byteArrayt2Int(byte[] b)
 	{
 		assert(b != null);
@@ -25,21 +25,21 @@ public class IBT
 	}	
 		
 		
-	// 4¸ö byte£¬×ª³É1¸ö int
+	// 4ï¿½ï¿½ byteï¿½ï¿½×ªï¿½ï¿½1ï¿½ï¿½ int
 	public static int byteArray2Int(byte b1, byte b2, byte b3, byte b4)
 	{
-		byte b[] = {b1, b2, b3, b4};
+		byte[] b = {b1, b2, b3, b4};
 		
 		return byteArrayt2Int(b);
 	}
 	
-	// 1¸ö byte£¬×ª³É1¸ö int
+	// 1ï¿½ï¿½ byteï¿½ï¿½×ªï¿½ï¿½1ï¿½ï¿½ int
 	public static int byte2Int(byte b)
 	{
 		return (0xff & b);
 	}
 		
-	// 1¸ö int£¬×ª³É4¸ö byte
+	// 1ï¿½ï¿½ intï¿½ï¿½×ªï¿½ï¿½4ï¿½ï¿½ byte
 	public static byte[] int2ByteArray(int x)
 	{
 		byte[] b = new byte[4];		
@@ -52,10 +52,10 @@ public class IBT
 		return b;					
 	}
 	
-	// 1¸öint£¬×ª³É1¸ö byte
+	// 1ï¿½ï¿½intï¿½ï¿½×ªï¿½ï¿½1ï¿½ï¿½ byte
 	public static byte int2SingleByte(int x)
 	{
-		byte b[] = int2ByteArray(x);
+		byte[] b = int2ByteArray(x);
 		
 		assert(null != b);
 		assert(4 != b.length);

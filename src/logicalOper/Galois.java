@@ -2,49 +2,49 @@ package logicalOper;
 
 public class Galois 
 {		
-	// b1 + b2£¬Êµ¼ÊÉÏµÈÓÚ b1 xor b2
+	// b1 + b2ï¿½ï¿½Êµï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ b1 xor b2
 	private static byte add(byte b1, byte b2)
 	{		
 		return (byte) ((0xff & b1) ^ (0xff & b2));
 	}
 	
-	// b ³ËÒÔ 0
+	// b ï¿½ï¿½ï¿½ï¿½ 0
 	private static byte mul_0(byte b)
 	{
 		return 0;
 	}
 	
 	
-	// b ³ËÒÔ 1
+	// b ï¿½ï¿½ï¿½ï¿½ 1
 	private static byte mul_1(byte b)
 	{
 		return b;
 	}
 	
-	// b ³ËÒÔ 2
+	// b ï¿½ï¿½ï¿½ï¿½ 2
 	private static byte mul_2(byte b)
 	{
-		// ÏÈ°Ñ b ×óÒÆ1Î»
+		// ï¿½È°ï¿½ b ï¿½ï¿½ï¿½ï¿½1Î»
 		byte c = Shift.leftShift(b, 1);				
 		
-		// »ñÈ¡ b µÄ×î¸ßÎ»
+		// ï¿½ï¿½È¡ b ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 		int flag = (0b10000000) & b;
 		
 		
 		if (0 == flag)
 		{
-			// Èç¹û×î¸ßÎ»µÈÓÚ0£¬ÄÇÃ´ return c
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ã´ return c
 			return c;
 		}
 		else
 		{
-			// Èç¹û×î¸ßÎ»µÈÓÚ1£¬ÄÇÃ´ return (c ^ )
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ã´ return (c ^ )
 			return (byte) (c ^ (0b00011011));
 		}		
 	}		
 	
 	
-	// b ³ËÒÔ»ùÊý£º1,2,4,8,16,32,64,128
+	// b ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½ï¿½1,2,4,8,16,32,64,128
 	private static byte[] mul_base(byte b)
 	{
 		byte [] c = new byte[8];
@@ -62,10 +62,10 @@ public class Galois
 	}	
 	
 	
-	// ½« b ·Ö½â³É¶à¸ö»ùÊýµÄÒì»ò
+	// ï¿½ï¿½ b ï¿½Ö½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private static byte[] seperate(byte b)
 	{
-		byte c[] = new byte[8];
+		byte[] c = new byte[8];
 		
 		c[0] = (byte) ((0b00000001) & b);
 		c[1] = (byte) ((0b00000010) & b);
@@ -79,16 +79,16 @@ public class Galois
 		return c;
 	}
 	
-	// Á½¸ö byte Ïà³Ë
+	// ï¿½ï¿½ï¿½ï¿½ byte ï¿½ï¿½ï¿½
 	public static byte mul(byte b1, byte b2)
 	{
-		// 1. ½« b1 ³ËÒÔ¸÷¸ö»ùÊý
+		// 1. ï¿½ï¿½ b1 ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		byte [] c1 = mul_base(b1);
 		
-		// 2. ½« b2 ×ª»»Îª8¸ö»ùÊýµÄÒì»ò
+		// 2. ï¿½ï¿½ b2 ×ªï¿½ï¿½Îª8ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		byte [] c2 = seperate(b2);
 		
-		// 3. ¸ù¾Ý c2£¬ÐÞÕý c1
+		// 3. ï¿½ï¿½ï¿½ï¿½ c2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ c1
 		int i;
 		
 		for (i = 0; i < 8; ++i)
@@ -99,7 +99,7 @@ public class Galois
 			}
 		}
 		
-		// 4. ½«8¸ö c1[i] Òì»ò
+		// 4. ï¿½ï¿½8ï¿½ï¿½ c1[i] ï¿½ï¿½ï¿½
 		byte d = add(c1[0], c1[1]);
 		
 		for (i = 2; i < 8; ++i)
