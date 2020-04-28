@@ -20,24 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/Euclid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/AES.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hash/CMD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CMD5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hash/CSHA256.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CSHA256.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/AES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/AES_KEY_LEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/AES_KEY_LEN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/SBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/SBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CMD5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CMD5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CSHA256.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CSHA256.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Galois.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/Galois.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/IBT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/IBT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +83,7 @@
       <updated>1587742453518</updated>
       <workItem from="1587742466698" duration="4317000" />
       <workItem from="1587882789937" duration="1484000" />
-      <workItem from="1588113803920" duration="1624000" />
+      <workItem from="1588113803920" duration="2814000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -130,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587902972573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1588116611049</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588116611049</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,22 +156,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587903178430" />
-    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1588072283520">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1588116579726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588072283520" />
-    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1588072283520">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588116579726" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1588116579725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588072283520" />
-    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1588072283519">
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588116579725" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1588116579725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588072283519" />
-    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1588072283520">
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588116579725" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1588116579726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588072283520" />
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588116579726" />
     <state x="275" y="86" key="MergeDialog" timestamp="1587902588128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -194,13 +184,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587903248215" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587902996786">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588116625737">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587902996786" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588116625737" />
     <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587902623857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587902623857" />
+    <state x="654" y="307" key="git4idea.merge.GitPullDialog" timestamp="1588116977763">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="654" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588116977763" />
   </component>
 </project>
