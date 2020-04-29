@@ -97,7 +97,7 @@ public class CTest
 
 		System.out.println("hello eclipse");
 
-		d = Euclid.gcd(21, 999);
+		d = Euclid.gcd(5000000, -1000000000);
 
 		System.out.println(Integer.toString(d));
 

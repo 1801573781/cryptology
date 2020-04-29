@@ -31,36 +31,22 @@ public class Euclid
             return a;
         }
 
-        // 3. 计算 r1：a = q1 * b + r1, r1 = a % b
-        int r1 = a % b;
+        // 4. 迭代计算
+        return gcd_inner(a, b);
+    }
 
-        if (0 == r1)
+    // 这里保证： a >= b > 0
+    private static int gcd_inner(int a, int b)
+    {
+        int r = a % b;
+
+        if (0 == r)
         {
             return b;
         }
-
-        // 4. 计算 r2：b = q2 * r1 + r2, r2 = b % r1
-        int r2 = b % r1;
-
-        if (0 == r2)
+        else
         {
-            return r1;
-        }
-
-        // 5. 迭代计算
-        int r3;
-
-        while (true)
-        {
-            r3 = r1 % r2;
-
-            if (0 == r3)
-            {
-                return r2;
-            }
-
-            r1 = r2;
-            r2 = r3;
+            return gcd_inner(b, r);
         }
     }
 }
