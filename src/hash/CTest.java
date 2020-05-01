@@ -97,10 +97,15 @@ public class CTest
 
 		System.out.println("hello eclipse");
 
-		d = Euclid.gcd(5000000, -1000000000);
+		d = Euclid.gcd(28, 96);
 
 		System.out.println(Integer.toString(d));
 
 		System.out.println("test");
+
+		int XY[] = Euclid.ext_gcd(1759, 550);
+
+		System.out.printf("x = %d, y = %d\n", XY[0], XY[1]);
+
 	}
 }
