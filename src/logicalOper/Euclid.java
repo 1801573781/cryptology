@@ -120,9 +120,9 @@ public class Euclid
         y[1] = 1;
         y[0] = 0;
 
-        // 假设 q = 0:
-        x[2] = x[0];
-        y[2] = y[0];
+        // 假设 gcd(a, b) = b:
+        x[2] = 0;
+        y[2] = 1;
 
         // 4. 迭代计算
         ext_gcd_inner(c[0], c[1], x, y);

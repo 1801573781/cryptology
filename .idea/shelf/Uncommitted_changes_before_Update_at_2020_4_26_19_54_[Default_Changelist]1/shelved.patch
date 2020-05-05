@@ -1,9 +1,0 @@
-Index: bin/.gitignore
-===================================================================
---- bin/.gitignore	(revision 6a82dc276b9a9940cefbb38e522879494c177494)
-+++ bin/.gitignore	(revision 6a82dc276b9a9940cefbb38e522879494c177494)
-@@ -1,4 +0,0 @@
--/aes/
--/hash/
--/logicalOperation/
--/logicalOper/
