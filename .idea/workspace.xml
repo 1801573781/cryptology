@@ -20,39 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/Calc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/CalcMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/GF2Poly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/GFnCal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/GFpCal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/GFpPoly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logicalOper/Prime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/AES_KEY_LEN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/CMD5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/CSHA256.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/CTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/SBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/WKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_4_26_19_54__Default_Changelist_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/AES.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hash/CMD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CMD5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hash/CSHA256.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CSHA256.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hash/CTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/Galois.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/IBT.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/IBT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Shift.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/Shift.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cryptology.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cryptology.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/Euclid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +56,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.project" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="CTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -124,7 +92,8 @@
       <workItem from="1587882789937" duration="1484000" />
       <workItem from="1588113803920" duration="14159000" />
       <workItem from="1588335633514" duration="19487000" />
-      <workItem from="1588418142011" duration="18872000" />
+      <workItem from="1588418142011" duration="19446000" />
+      <workItem from="1588646980110" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -189,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588294803898</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="test">
+      <created>1588646428173</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588646428173</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,46 +209,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587903178430" />
-    <state width="1257" height="268" key="GridCell.Tab.0.bottom" timestamp="1588646228937">
+    <state width="1257" height="268" key="GridCell.Tab.0.bottom" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588646228937" />
-    <state width="1257" height="268" key="GridCell.Tab.0.center" timestamp="1588646228936">
+    <state width="1257" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.0.center" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588646228936" />
-    <state width="1257" height="268" key="GridCell.Tab.0.left" timestamp="1588646228935">
+    <state width="1257" height="268" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.0.left" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588646228935" />
-    <state width="1257" height="268" key="GridCell.Tab.0.right" timestamp="1588646228936">
+    <state width="1257" height="268" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.0.right" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588646228936" />
-    <state width="1257" height="268" key="GridCell.Tab.1.bottom" timestamp="1588646229029">
+    <state width="1257" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.1.bottom" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428890" />
-    <state width="1257" height="268" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588646229029" />
-    <state width="1257" height="268" key="GridCell.Tab.1.center" timestamp="1588646229029">
+    <state width="1257" height="268" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.1.center" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588646229029" />
-    <state width="1257" height="268" key="GridCell.Tab.1.left" timestamp="1588646229029">
+    <state width="1257" height="268" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.1.left" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588646229029" />
-    <state width="1257" height="268" key="GridCell.Tab.1.right" timestamp="1588646229029">
+    <state width="1257" height="268" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
+    <state width="1257" height="268" key="GridCell.Tab.1.right" timestamp="1588646961835">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="938" height="141" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
-    <state width="1257" height="268" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588646229029" />
+    <state width="1257" height="268" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588646961835" />
     <state x="275" y="86" key="MergeDialog" timestamp="1587902588128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -281,15 +257,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="383" width="425" height="273" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587902596287" />
-    <state x="214" y="263" key="SettingsEditor" timestamp="1588574613970">
+    <state x="771" y="211" key="SettingsEditor" timestamp="1588647576660">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587903248215" />
-    <state x="214" y="263" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1588574613970" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588294824591">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1588647576660" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588646501830">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588294824591" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588646501830" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
