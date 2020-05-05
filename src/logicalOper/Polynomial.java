@@ -243,9 +243,6 @@ public class Polynomial
         int c[] = new int[t];
         int d[] = new int[t];
 
-        System.arraycopy(a, 0, c, 0, n);
-        System.arraycopy(b, 0, d, 0, m);
-
         // 2. 开始相乘
 
         // 相乘后的系数，仍然是利用了 java 的特性：数组元素默认为0
@@ -324,8 +321,6 @@ public class Polynomial
         // 2. 计算 a[n - 1] / b[m - 1]
 
         // 2.1 首先计算 a(x)/b(x) 中，x 的最高幂
-        // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
-        // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
         int power = n - m;
 
         // 2.2 然后计算，a[n - 1] / b[m - 1] 中，最高幂的系数
@@ -443,6 +438,5 @@ public class Polynomial
 
         return true;
     }
-
 
 }
