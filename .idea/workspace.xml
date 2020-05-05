@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +91,7 @@
       <workItem from="1588113803920" duration="14159000" />
       <workItem from="1588335633514" duration="19487000" />
       <workItem from="1588418142011" duration="19446000" />
-      <workItem from="1588646980110" duration="597000" />
+      <workItem from="1588646980110" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -165,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588646428173</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test">
+      <created>1588647906632</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588647906632</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,11 +267,11 @@
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587903248215" />
     <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1588647576660" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588646501830">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588647594507">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588294824591" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588646501830" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588647594507" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -275,10 +280,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587902623857" />
-    <state x="654" y="307" key="git4idea.merge.GitPullDialog" timestamp="1588295498732">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="307" key="git4idea.merge.GitPullDialog" timestamp="1588647865078">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588295498732" />
+    <state x="872" y="307" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1588647865078" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
