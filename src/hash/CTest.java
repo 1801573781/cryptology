@@ -123,11 +123,27 @@ public class CTest
 		ddd = Polynomial.mul(new int[] {-1, 1}, new int[] {1, 1});
 		Polynomial.println(ddd);
 
-		System.out.println("div");
+		System.out.println("div1");
 
-		int[][] dddd = Polynomial.div(new int[] {1, 2, 1}, new int[] {1, 1}, 7);
+		int[][] dddd = Polynomial.div(new int[] {1, 1, 0, 1}, new int[] {1, 1}, 2);
 		Polynomial.println(dddd[0]);
 		Polynomial.println(dddd[1]);
+
+		System.out.println("div2");
+
+		dddd = Polynomial.div(new int[] {0, 0, 5}, new int[] {0, 3}, 7);
+		Polynomial.println(dddd[0]);
+		Polynomial.println(dddd[1]);
+
+		System.out.println("gcd1");
+
+		ddd = Polynomial.gcd(new int[] {0, 0, 5}, new int[] {0, 3}, 7);
+		Polynomial.println(ddd);
+
+		System.out.println("gcd2");
+
+		ddd = Polynomial.gcd(new int[] {1, 1, 0, 1}, new int[] {1, 1}, 2);
+		Polynomial.println(ddd);
 
 
 		System.out.println((-2) % 7);

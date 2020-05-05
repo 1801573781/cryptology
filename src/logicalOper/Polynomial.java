@@ -140,7 +140,9 @@ public class Polynomial
     }
 
 
-    // 多项式加法
+    // 多项式加法：a(x) - b(x)
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     public static int[] add(int a[], int b[], CalcMode mode, int p)
     {
         verify(a);
@@ -195,7 +197,9 @@ public class Polynomial
         return sub(a, b, CalcMode.NOARMAL_MODE, 0);
     }
 
-    // 多项式减法
+    // 多项式减法：a(x) - b(x)
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     public static int[] sub(int a[], int b[], CalcMode mode, int p)
     {
         verify(a);
@@ -215,13 +219,15 @@ public class Polynomial
         return add(a, c, mode, p);
     }
 
-    // 多项式乘法：normal sub
+    // 多项式乘法：normal mul
     public static int[] mul(int a[], int b[])
     {
         return mul(a, b, CalcMode.NOARMAL_MODE, 0);
     }
 
-    // 多项式乘法
+    // 多项式乘法：a(x) * b(x)
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     public static int[] mul(int a[], int b[], CalcMode mode, int p)
     {
         verify(a);
@@ -263,17 +269,16 @@ public class Polynomial
 
     }
 
-    // 多项式相除 d = b / a
+    // 多项式除法：a(x) / b(x)
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     // d[0]: 商，d[1]: 余数
     // 如果 商、余数 为0，则 d[0]、d[1] 的值全为0
     // 只有 GF(p)，才支持除法
     public static int[][] div(int a[], int b[], int p)
     {
-        // assert(CalcMode.GFp_MODE == mode);
-
         verify(a);
         verify(b);
-
 
         // q[]：商，r[]：余数。两者都定义为 int[n]
         // 还是利用 java 数组的特性：两者初始化都为0
@@ -319,12 +324,12 @@ public class Polynomial
 
         // 2. 计算 a[n - 1] / b[m - 1]
 
-        // 2.1 首先计算 b(x)/a(x) 中，x 的最高幂
+        // 2.1 首先计算 a(x)/b(x) 中，x 的最高幂
         // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
         // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
         int power = n - m;
 
-        // 2.2 然后计算，b/a 中，最高幂的系数
+        // 2.2 然后计算，a[n - 1] / b[m - 1] 中，最高幂的系数
         int factor = Calc.div(a[n - 1], b[m - 1], CalcMode.GFp_MODE, p);
 
         // 3. 别忘了给 q[] 赋值
@@ -361,7 +366,7 @@ public class Polynomial
         // 1. 获取 e 的最高位不为0的index
         // 不抽取子函数了，就写在这里了。
 
-        int h = 0;
+        int h = -1;
         int i = 0;
 
         for (i = (n - 1); i >= 0; --i)
@@ -376,7 +381,7 @@ public class Polynomial
         // 2. 修正 e[]
 
         // 所有位都为0
-        if (0 == h)
+        if (-1 == h)
         {
             return null;
         }
@@ -389,5 +394,55 @@ public class Polynomial
             return rv;
         }
     }
+
+
+    // 多项式，求最大公因式：gcd(a(x), b(x))
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
+    // 只有 GF(p)，才支持求解最大公因式
+    public static int[] gcd(int a[], int b[], int p)
+    {
+        verify(a);
+        verify(b);
+
+        int qr[][] = div(a, b, p);
+
+        assert(null != qr);
+        assert(2 == qr.length);
+
+        int r[] = qr[1];
+
+        if (isZero(r))
+        {
+            return b;
+        }
+        else
+        {
+            // r 需要先修正一下
+            r = revise(r);
+
+            return gcd(b, r, p);
+        }
+    }
+
+    private static boolean isZero(int r[])
+    {
+        assert(null != r);
+
+        int n = r.length;
+
+        int i;
+
+        for (i = 0; i < n; ++i)
+        {
+            if (0 != r[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 
 }

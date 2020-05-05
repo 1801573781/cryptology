@@ -15,7 +15,7 @@ public class GFnCal
     {
         verify(a, b, n);
 
-        return ((a + b)  % n);
+        return Math.floorMod((a + b), n);
     }
 
     public static int sub(int a, int b, int n)
@@ -31,7 +31,7 @@ public class GFnCal
     {
         verify(a, b, n);
 
-        return ((a * b)  % n);
+        return Math.floorMod((a * b), n);
     }
 
 
