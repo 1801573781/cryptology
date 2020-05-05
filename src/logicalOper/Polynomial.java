@@ -425,6 +425,7 @@ public class Polynomial
         }
     }
 
+    // 如果 r[] 中的每个元素都是0，那么 r[] 就是 zero
     private static boolean isZero(int r[])
     {
         assert(null != r);
