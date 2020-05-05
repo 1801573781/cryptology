@@ -1,6 +1,6 @@
 package logicalOper;
 
-// GF(p) 的运算：加减乘，没有除，n 是整数
+// GF(n) 的运算：加减乘，没有除，n 是整数
 public class GFnCal
 {
     public static void verify(int a, int b, int n)

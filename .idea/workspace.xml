@@ -26,7 +26,7 @@
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/GFnCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/GFnCal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,7 @@
       <workItem from="1588113803920" duration="14159000" />
       <workItem from="1588335633514" duration="19487000" />
       <workItem from="1588418142011" duration="19446000" />
-      <workItem from="1588646980110" duration="9150000" />
+      <workItem from="1588646980110" duration="9823000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588660669106</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="test">
+      <created>1588662567134</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588662567134</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,11 +305,11 @@
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587903248215" />
     <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1588647576660" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588660678768">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588662575377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588294824591" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588660678768" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588662575377" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
