@@ -107,5 +107,30 @@ public class CTest
 
 		System.out.printf("x = %d, y = %d\n", XY[0], XY[1]);
 
+		int ddd[] = {-9, -20, 0, 1, -1, -3};
+
+		Polynomial.println(ddd);
+
+
+		ddd = new int[] {1, 0, 0, 1, -1, -1};
+
+		Polynomial.println(ddd);
+
+		ddd = Polynomial.sub(new int[] {3, 2, 1}, new int[] {1, 2, 3, 4});
+		Polynomial.println(ddd);
+
+
+		ddd = Polynomial.mul(new int[] {-1, 1}, new int[] {1, 1});
+		Polynomial.println(ddd);
+
+		System.out.println("div");
+
+		int[][] dddd = Polynomial.div(new int[] {1, 2, 1}, new int[] {1, 1}, 7);
+		Polynomial.println(dddd[0]);
+		Polynomial.println(dddd[1]);
+
+
+		System.out.println((-2) % 7);
+
 	}
 }
