@@ -389,12 +389,11 @@ public class Polynomial
         }
     }
 
-
-    // 多项式，求最大公因式：gcd(a(x), b(x))
+    // 多项式，求模：r(x) = a(x) mod b(x)
     // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
     // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     // 只有 GF(p)，才支持求解最大公因式
-    public static int[] gcd(int a[], int b[], int p)
+    public static int[] mod(int a[], int b[], int p)
     {
         verify(a);
         verify(b);
@@ -405,6 +404,21 @@ public class Polynomial
         assert(2 == qr.length);
 
         int r[] = qr[1];
+
+        return r;
+    }
+
+
+    // 多项式，求最大公因式：gcd(a(x), b(x))
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
+    // 只有 GF(p)，才支持求解最大公因式
+    public static int[] gcd(int a[], int b[], int p)
+    {
+        verify(a);
+        verify(b);
+
+        int r[] = mod(a, b, q);
 
         if (isZero(r))
         {
