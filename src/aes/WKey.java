@@ -1,6 +1,6 @@
 package aes;
 
-import logicalOper.*;
+import cryptologyMath.*;
 
 public class WKey 
 {

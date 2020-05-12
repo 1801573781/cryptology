@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 public class Euclid
 {
@@ -77,7 +77,7 @@ public class Euclid
     // 扩展欧几里得算法
     // ax + by = gcd(a, b), a, b, x, y 都是整数
     // 已知 a, b, 求解 x, y
-    public static int[] ext_gcd(int a, int b)
+    public static int[] ext_euclid(int a, int b)
     {
         // XY[0]，相当于 x，XY[1] 相当于 y
         int XY[] = new int[2];
@@ -125,7 +125,7 @@ public class Euclid
         y[2] = 1;
 
         // 4. 迭代计算
-        ext_gcd_inner(c[0], c[1], x, y);
+        ext_euclid_inner(c[0], c[1], x, y);
 
         // 5. 构建返回值
         XY[0] = x[2];
@@ -136,7 +136,7 @@ public class Euclid
 
 
     // 这里保证： a >= b > 0, x[] : x[3], y[] : y[3]
-    private static int ext_gcd_inner(int a, int b, int x[], int y[])
+    private static int ext_euclid_inner(int a, int b, int x[], int y[])
     {
         assert(a > 0);
         assert(b > 0);
@@ -173,8 +173,86 @@ public class Euclid
             a = b;
             b = r;
 
-            return ext_gcd_inner(a, b, x, y);
+            return ext_euclid_inner(a, b, x, y);
         }
     }
+
+
+
+    // 多项式，求最大公因式：gcd(a(x), b(x))
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
+    // 只有 GF(p)、GF(p^n)，才支持求解最大公因式
+    public static int[] gcd(int a[], int b[], int p)
+    {
+        assert(null != a);
+        assert(null != b);
+
+        int r[] = Polynomial.mod(a, b, p);
+
+        if (Polynomial.isZero(r))
+        {
+            return b;
+        }
+        else
+        {
+            return gcd(b, r, p);
+        }
+    }
+
+
+
+
+
+    // GF(p^n) 多项式，扩展欧几里得算法
+    // a(x) * v(x) + b(x) * w(x) = gcd(a(x), b(x))
+    public static int[][] ext_euclid(int a[], int b[], int p, int n)
+    {
+        assert(null != a);
+        assert(null != b);
+
+
+        // 1. 先初始化 v0, v1, w0, w1
+        int[] v0 = new int[] {1};
+        int[] v1 = new int[] {0};
+
+        int[] w0 = new int [] {0};
+        int[] w1 = new int [] {1};
+
+        // 2. 迭代计算
+        return ext_euclid_inner(a, b, v0, v1, w0, w1, p, n);
+    }
+
+
+    public static int[][] ext_euclid_inner(int a[], int b[], int v0[], int v1[], int w0[], int w1[], int p, int n)
+    {
+        int qr[][] = Polynomial.div(a, b, p);
+
+        assert(null != qr);
+        assert(2 == qr.length);
+
+        int q[] = qr[0];
+        int r[] = qr[1];
+
+        if (Polynomial.isZero(r))
+        {
+            int vw[][] = new int[2][];
+
+            vw[0] = v1;
+            vw[1] = w1;
+
+            return vw;
+        }
+        else
+        {
+            int v2[] = Polynomial.sub(v0, Polynomial.mul(q, v1, p, n), CalcMode.GFp_MODE, p);
+            int w2[] = Polynomial.sub(w0, Polynomial.mul(q, w1, p, n), CalcMode.GFp_MODE, p);
+
+            return ext_euclid_inner(b, r, v1, v2, w1, w2, p, n);
+        }
+    }
+
+
+
 
 }

@@ -1,8 +1,8 @@
-package logicalOper;
+package cryptologyMath;
 
 public class IBT 
 {
-	// 4�� byte��ת��1�� int
+	// 4个 byte，转换成1个 int
 	public static int byteArrayt2Int(byte[] b)
 	{
 		assert(b != null);
@@ -25,7 +25,7 @@ public class IBT
 	}	
 		
 		
-	// 4�� byte��ת��1�� int
+	// 4个 byte，转换成1个 int
 	public static int byteArray2Int(byte b1, byte b2, byte b3, byte b4)
 	{
 		byte[] b = {b1, b2, b3, b4};
@@ -33,13 +33,13 @@ public class IBT
 		return byteArrayt2Int(b);
 	}
 	
-	// 1�� byte��ת��1�� int
+	// 1个 byte 转换成1个 int
 	public static int byte2Int(byte b)
 	{
 		return (0xff & b);
 	}
 		
-	// 1�� int��ת��4�� byte
+	// 1个 int 转换成4个 byte
 	public static byte[] int2ByteArray(int x)
 	{
 		byte[] b = new byte[4];		
@@ -52,7 +52,8 @@ public class IBT
 		return b;					
 	}
 	
-	// 1��int��ת��1�� byte
+	// 1个 int 转换成1个 byte
+	// 这个需求我记不清了，为什么有这个需求？
 	public static byte int2SingleByte(int x)
 	{
 		byte[] b = int2ByteArray(x);

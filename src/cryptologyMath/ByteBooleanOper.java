@@ -1,7 +1,7 @@
-package logicalOper;
+package cryptologyMath;
 
 // ²¼¶ûÔËËã
-public class Boolean 
+public class ByteBooleanOper
 {
 	public static byte[] xor(byte[] b, int x)
 	{

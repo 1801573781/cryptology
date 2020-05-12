@@ -4,7 +4,7 @@
 package hash;
 
 import aes.*;
-import logicalOper.*;
+import cryptologyMath.*;
 
 /**
  * @author lzb
@@ -89,7 +89,7 @@ public class CTest
 			System.out.printf("y[%d] = %d\n", i, y[i]);
 		}
 		
-		byte z = Galois.mul((byte)0x3a, (byte)0x24);		
+		byte z = Galois2exp8.mul((byte)0x3a, (byte)0x24);
 		
 		System.out.printf("z = 0x%x\n", (0xff & z));
 		
@@ -103,7 +103,7 @@ public class CTest
 
 		System.out.println("test");
 
-		int XY[] = Euclid.ext_gcd(1759, 550);
+		int XY[] = Euclid.ext_euclid(1759, 550);
 
 		System.out.printf("x = %d, y = %d\n", XY[0], XY[1]);
 
@@ -116,16 +116,16 @@ public class CTest
 
 		Polynomial.println(ddd);
 
-		ddd = Polynomial.sub(new int[] {3, 2, 1}, new int[] {1, 2, 3, 4});
+		ddd = Polynomial.sub(new int[] {3, 2, 1, 0}, new int[] {1, 2, 3, 4});
 		Polynomial.println(ddd);
 
 
-		ddd = Polynomial.mul(new int[] {-1, 1}, new int[] {1, 1});
+		ddd = Polynomial.mul(new int[] {-1, 1, 0, 0, 0}, new int[] {1, 1, 0, 0, 0});
 		Polynomial.println(ddd);
 
 		System.out.println("div1");
 
-		int[][] dddd = Polynomial.div(new int[] {1, 1, 0, 1}, new int[] {1, 1}, 2);
+		int[][] dddd = Polynomial.div(new int[] {1, 1, 0, 1, 0, 0}, new int[] {1, 1, 0, 0}, 2);
 		Polynomial.println(dddd[0]);
 		Polynomial.println(dddd[1]);
 
@@ -137,16 +137,32 @@ public class CTest
 
 		System.out.println("gcd1");
 
-		ddd = Polynomial.gcd(new int[] {0, 0, 5}, new int[] {0, 3}, 7);
+		ddd = Euclid.gcd(new int[] {0, 0, 5}, new int[] {0, 3}, 7);
 		Polynomial.println(ddd);
 
 		System.out.println("gcd2");
 
-		ddd = Polynomial.gcd(new int[] {1, 1, 0, 1}, new int[] {1, 1}, 2);
+		ddd = Euclid.gcd(new int[] {1, 1, 0, 1}, new int[] {1, 1}, 2);
 		Polynomial.println(ddd);
 
 
-		System.out.println((-2) % 7);
+		System.out.println("GF(2^8)");
+
+		ddd = Polynomial.mul(new int[] {0, 1, 1}, new int[] {1, 0, 1}, 2, 3);
+		Polynomial.println(ddd);
+
+		System.out.println("mul_inv");
+
+		ddd = Polynomial.mul_inv(new int[] {1, 1, 0, 0, 0, 0, 0, 1}, 2, 8);
+		Polynomial.println(ddd);
+
+		ddd = Polynomial.mul(new int[] {1, 1, 0, 0, 0, 0, 0, 1}, new int[] {0, 0, 0, 0, 0, 0, 0, 1}, 2, 8);
+		Polynomial.println(ddd);
+
+		System.out.println("GF(2^8) div");
+		byte bbb = Galois2exp8.div((byte)28, (byte)56);
+		Galois2exp8.printUnsignedByteln(bbb);
+
 
 	}
 }

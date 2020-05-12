@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 /*
 // 多项式运算：
@@ -15,7 +15,8 @@ public class Polynomial
     {
         assert(null != a);
 
-        assert(0 != a[a.length - 1]); // 最高位不等于0
+        // 最高位等于0，应该也可以
+        //assert(0 != a[a.length - 1]); // 最高位不等于0
 
     }
 
@@ -243,6 +244,9 @@ public class Polynomial
         int c[] = new int[t];
         int d[] = new int[t];
 
+        System.arraycopy(a, 0, c, 0, n);
+        System.arraycopy(b, 0, d, 0, m);
+
         // 2. 开始相乘
 
         // 相乘后的系数，仍然是利用了 java 的特性：数组元素默认为0
@@ -270,7 +274,9 @@ public class Polynomial
     // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
     // d[0]: 商，d[1]: 余数
     // 如果 商、余数 为0，则 d[0]、d[1] 的值全为0
-    // 只有 GF(p)，才支持除法
+    // 只有 GF(p)、GF(p^n) 才支持除法
+    // 但是，GF(p^n) 的除法（a(x)/b(x)），其算法是乘以 b(x) 的乘法逆元，不是此算法
+    // 这个算法，就是 GF(p) 的除法 a(x)/b(x)
     public static int[][] div(int a[], int b[], int p)
     {
         verify(a);
@@ -285,8 +291,8 @@ public class Polynomial
         div_inner(a, b, p, q, r);
 
         int[][] d = new int[2][];
-        d[0] = q;
-        d[1] = r;
+        d[0] = revise(q);
+        d[1] = revise(r);
 
         return d;
     }
@@ -295,58 +301,60 @@ public class Polynomial
     //内部除法迭代函数
     private static int div_inner(int a[], int b[], int p, int q[], int r[])
     {
-        // if (null == a)，说明除法已经结束
-        if (null == a)
-        {
-            return 0;
-        }
-
+        verify(a);
         verify(b);
 
         assert(null != q);
         assert(null != r);
 
-        int n = a.length;
-        int m = b.length;
+        // 1. 将 a, b 修正一下，去除最高幂的系数为0者
+        int [] a2 = revise(a);
+        int [] b2 = revise(b);
 
-        // 1. 如果 a 的系数比 b 的低，那除法也就结束了
-        // 余数就是 a
+        // 说明除法已经结束
+        if (isZero(a))
+        {
+            return 0;
+        }
+
+        int n = a2.length;
+        int m = b2.length;
+
+        // 2. 如果 a2 的系数比 b2 的低，那除法也就结束了
+        // 余数就是 a2
         if (n < m)
         {
-            System.arraycopy(a, 0, r, 0, n);
+            System.arraycopy(a2, 0, r, 0, n);
 
             return 0;
         }
 
-        // 2. 计算 a[n - 1] / b[m - 1]
+        // 3. 计算 a2[n - 1] / b2[m - 1]
 
-        // 2.1 首先计算 a(x)/b(x) 中，x 的最高幂
+        // 3.1 首先计算 a(x)/b(x) 中，x 的最高幂
         int power = n - m;
 
-        // 2.2 然后计算，a[n - 1] / b[m - 1] 中，最高幂的系数
-        int factor = Calc.div(a[n - 1], b[m - 1], CalcMode.GFp_MODE, p);
+        // 3.2 然后计算，a[n - 1] / b[m - 1] 中，最高幂的系数
+        int factor = Calc.div(a2[n - 1], b2[m - 1], CalcMode.GFp_MODE, p);
 
-        // 3. 别忘了给 q[] 赋值
+        // 4. 别忘了给 q[] 赋值
         q[power] = factor;
 
-        // 4. 计算 d(x) = c(x) * b(x)
+        // 5. 计算 d(x) = c(x) * b2(x)
         // c(x) = factor * x^(n-m)
 
-        // 4.1 构建 c[]
+        // 5.1 构建 c[]
         int c[] = new int[power + 1];
         c[power] = factor;
 
-        // 4.2 计算 c(x) * b(x)
-        int d[] = mul(c, b, CalcMode.GFp_MODE, p);
+        // 5.2 计算 c(x) * b2(x)
+        int d[] = mul(c, b2, CalcMode.GFp_MODE, p);
 
-        // 5. 计算 e(x) = a(x) - d(x)
-        int e[] = sub(a, d, CalcMode.GFp_MODE, p);
-
-        // 6. 修正一下 e[]，因为 e[最高位] 有可能等于0
-        int rv[] = revise(e);
+        // 6. 计算 e(x) = a2(x) - d(x)
+        int e[] = sub(a2, d, CalcMode.GFp_MODE, p);
 
         // 7. 迭代计算
-        return div_inner(rv, b, p, q, r);
+        return div_inner(e, b2, p, q, r);
     }
 
 
@@ -377,7 +385,7 @@ public class Polynomial
         // 所有位都为0
         if (-1 == h)
         {
-            return null;
+            return new int[1];
         }
         else
         {
@@ -409,48 +417,132 @@ public class Polynomial
     }
 
 
-    // 多项式，求最大公因式：gcd(a(x), b(x))
+
+    // GF(p^n) 多项式乘法：a(x) * b(x)
     // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
     // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
-    // 只有 GF(p)，才支持求解最大公因式
-    public static int[] gcd(int a[], int b[], int p)
+    public static int[] mul(int a[], int b[], int p, int n)
     {
-        verify(a);
-        verify(b);
+        // 由于涉及到 GF(p^n) 的既约多项式，而这些既约多项式，我现在也不知道怎么构建
+        // 所以，只能支持几个有限的 p 和 n
 
-        int r[] = mod(a, b, q);
+        int[] m = getPrimePoly(p, n);
 
-        if (isZero(r))
+        if (null == m)
         {
-            return b;
+            return null;
         }
         else
         {
-            // r 需要先修正一下
-            r = revise(r);
-
-            return gcd(b, r, p);
+            ; // do nothing
         }
+
+        // 1. 按照 GF(p) 算法，计算乘法
+        int [] c = mul(a, b, CalcMode.GFp_MODE, p);
+
+        assert(null != c);
+
+        // 2. 求解 c(x) mod m(x)
+
+        int d[] = mod(c, m, p);
+
+        return d;
     }
+
+    // 获取既约多项式
+    private static int[] getPrimePoly(int p, int n)
+    {
+        // 由于涉及到 GF(p^n) 的既约多项式，而这些既约多项式，我现在也不知道怎么构建
+        // 所以，只能支持几个有限的 p 和 n
+
+        if (2 == p)
+        {
+            if (3 == n)
+            {
+                return new int[] {1, 1, 0, 1};
+            }
+            else if (8 == n)
+            {
+                return new int[] {1, 1, 0, 1, 1, 0, 0, 0, 1};
+            }
+            else
+            {
+                ; // 空语句
+            }
+
+        }
+        else
+        {
+            ; //空语句
+        }
+
+        return null;
+    }
+
+    // GF(p^n) b(x) 的乘法逆元
+    public static int[] mul_inv(int b[], int p, int n)
+    {
+        assert(null != b);
+        assert(Prime.isPrime(p));
+        assert(2 <= n);
+
+        int [] m = getPrimePoly(p, n);
+
+        assert(null != m);
+
+        int [][] vw = Euclid.ext_euclid(m, b, p, n);
+
+        assert(null != vw);
+        assert(2 == vw.length);
+        assert(null != vw[1]);
+
+        return mod(vw[1], m, p);
+    }
+
+
+    // GF(p^n) 多项式除法：a(x) / b(x)
+    // a(x) / b(x) = a(x) * （b(x) 的乘法逆元）
+    // a(x) = a[n-1] * x^(n-1) + ... + a[1] * x + a[0]
+    // b(x) = b[m-1] * x^(m-1) + ... + b[1] * x + b[0]
+    public static int[] div(int a[], int b[], int p, int n)
+    {
+        assert(null != a);
+        assert(null != b);
+        assert(Prime.isPrime(p));
+        assert(2 <= n);
+
+        int[] b_inv = mul_inv(b, p, n);
+
+        assert(null != b_inv);
+
+        return mul(a, b, p, n);
+    }
+
 
     // 如果 r[] 中的每个元素都是0，那么 r[] 就是 zero
-    private static boolean isZero(int r[])
+    public static boolean isZero(int r[])
     {
-        assert(null != r);
-
-        int n = r.length;
-
-        int i;
-
-        for (i = 0; i < n; ++i)
+        if (null == r)
         {
-            if (0 != r[i])
-            {
-                return false;
-            }
+            return true;
         }
+        else
+        {
+            int n = r.length;
 
-        return true;
+            int i;
+
+            for (i = 0; i < n; ++i)
+            {
+                if (0 != r[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
+
 
 }

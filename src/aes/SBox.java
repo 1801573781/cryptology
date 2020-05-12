@@ -1,6 +1,6 @@
 package aes;
 
-import logicalOper.IBT;
+import cryptologyMath.IBT;
 
 public class SBox 
 {

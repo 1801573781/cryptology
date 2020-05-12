@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 // 判断一个整数是否是素数
 public class Prime

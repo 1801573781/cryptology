@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 // GF(p) 的运算：加减乘除，p 是素数
 public class GFpCal
@@ -51,7 +51,7 @@ public class GFpCal
         assert(a < p);
         assert(Prime.isPrime(p));
 
-        int XY[] = Euclid.ext_gcd(a, p);
+        int XY[] = Euclid.ext_euclid(a, p);
 
         assert(null != XY);
 

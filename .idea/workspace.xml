@@ -20,14 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/AESException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AESException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/package-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hash/CTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/GF2Poly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Boolean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Calc$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Calc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/CalcMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Euclid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/IBT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Prime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Shift.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aes/SBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/SBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Boolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/ByteBooleanOper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Calc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/CalcMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/CalcMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Euclid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/GFnCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/GFnCal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/GFpCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/GFpCal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Galois.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/IBT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/IBT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Prime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Prime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalOper/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +90,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.project" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="CTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -107,6 +133,8 @@
       <workItem from="1588646980110" duration="13143000" />
       <workItem from="1589081028221" duration="576000" />
       <workItem from="1589081642237" duration="1197000" />
+      <workItem from="1589155362521" duration="25157000" />
+      <workItem from="1589285127815" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -227,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588664140416</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="test">
+      <created>1589155395107</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589155395107</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +298,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589081082049" />
+    <state x="667" y="290" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1589170786993">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="290" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589170786993" />
     <state x="1035" y="222" key="#xdebugger.evaluate" timestamp="1588346658325">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -271,53 +310,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="244" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1587903301516" />
-    <state width="395" height="466" key="DebuggerActiveHint" timestamp="1588659424896">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="390" height="466" key="DebuggerActiveHint" timestamp="1589203344808">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="390" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1589203344808" />
     <state width="395" height="466" key="DebuggerActiveHint/0.0.2560.1040@0.0.2560.1040" timestamp="1588659424896" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1587903178430">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587903178430" />
-    <state width="1257" height="268" key="GridCell.Tab.0.bottom" timestamp="1588804854477">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.0.bottom" timestamp="1589269180936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="1257" height="268" key="GridCell.Tab.0.center" timestamp="1588804854477">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.0.center" timestamp="1589269180936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="1257" height="268" key="GridCell.Tab.0.left" timestamp="1588804854477">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.0.left" timestamp="1589269180936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="1257" height="268" key="GridCell.Tab.0.right" timestamp="1588804854477">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.0.right" timestamp="1589269180936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="1257" height="268" key="GridCell.Tab.1.bottom" timestamp="1588804854478">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.1.bottom" timestamp="1589269180937">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428890" />
+    <state width="937" height="268" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="1257" height="268" key="GridCell.Tab.1.center" timestamp="1588804854478">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.1.center" timestamp="1589269180937">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="1257" height="268" key="GridCell.Tab.1.left" timestamp="1588804854478">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.1.left" timestamp="1589269180936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="1257" height="268" key="GridCell.Tab.1.right" timestamp="1588804854478">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="937" height="268" key="GridCell.Tab.1.right" timestamp="1589269180937">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="141" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588297428889" />
+    <state width="937" height="268" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
     <state x="275" y="86" key="MergeDialog" timestamp="1587902588128">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -328,15 +368,15 @@
     </state>
     <state x="838" y="383" width="425" height="273" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587902596287" />
     <state x="1117" y="383" key="MultipleFileMergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1588647974399" />
-    <state x="771" y="211" key="SettingsEditor" timestamp="1588664639499">
+    <state x="771" y="211" key="SettingsEditor" timestamp="1589285170303">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587903248215" />
-    <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1588664639499" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588664159011">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589240686043" />
+    <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589285170303" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589155444511">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588294824591" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589155444511" />
     <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588664159011" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -357,13 +397,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hash/CTest.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hash/CTest.java</url>
-          <line>144</line>
-          <option name="timeStamp" value="15" />
+          <line>162</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

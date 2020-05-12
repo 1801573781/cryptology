@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 public enum CalcMode
 {

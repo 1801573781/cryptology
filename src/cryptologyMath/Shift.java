@@ -1,4 +1,4 @@
-package logicalOper;
+package cryptologyMath;
 
 public class Shift 
 {
@@ -31,7 +31,7 @@ public class Shift
 		assert(s < 8);
 		
 		
-		int x = 0xff | b;
+		int x = 0xff & b;
 		
 		x = rotateLeftShift(x, s, 8);
 		
