@@ -31,9 +31,6 @@
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/SBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/SBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +111,7 @@
       <workItem from="1589081028221" duration="576000" />
       <workItem from="1589081642237" duration="1197000" />
       <workItem from="1589155362521" duration="25157000" />
-      <workItem from="1589285127815" duration="3296000" />
+      <workItem from="1589285127815" duration="4083000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -249,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589285267332</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="test">
+      <created>1589330491957</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589330491957</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,16 +363,16 @@
     </state>
     <state x="838" y="383" width="425" height="273" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587902596287" />
     <state x="1117" y="383" key="MultipleFileMergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1588647974399" />
-    <state x="771" y="211" key="SettingsEditor" timestamp="1589285170303">
+    <state x="771" y="211" key="SettingsEditor" timestamp="1589330939148">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589240686043" />
-    <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589285170303" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589285281412">
+    <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589330939148" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589330499924">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589155444511" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1589285281412" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1589330499924" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
