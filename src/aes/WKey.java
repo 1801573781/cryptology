@@ -104,7 +104,7 @@ public class WKey
 				tmp = Shift.rotateLeftShift(tmp, 8);
 				
 				// 2. S�б任
-				tmp = SBox.translate(tmp);
+				tmp = SBox.substitute(tmp);
 				
 				// 3. XOR
 				tmp ^= this.rc[i / 4 - 1];

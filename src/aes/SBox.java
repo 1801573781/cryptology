@@ -4,9 +4,8 @@ import cryptologyMath.IBT;
 
 public class SBox 
 {
-	// ��������˵������Ӧ���� unsigned char������ java ��֧���������
-	// �������ڴ��ռ�ã����� int ����ʾ
-	// �� byte ���ǲ����ԣ����Ǳ���鷳������ 0xf2������д�ɣ�(byte) 0xf2
+	// java 中没有 c/c++ 中的 unsigned char 类型，
+	// 为了简化编码，sbox，sbox-inv 的 存储，都采取 int 类型
 	private final static int[] sbox =
 		{
 			    //0    1     2     3     4     5     6     7     8     9     a     b     c     d     e     f
@@ -48,20 +47,18 @@ public class SBox
 			  0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d, 0x2d, 0xe5, 0x7a, 0x9f, 0x93, 0xc9, 0x9c, 0xef,
 			  0xa0, 0xe0, 0x3b, 0x4d, 0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb, 0x3c, 0x83, 0x53, 0x99, 0x61,
 			  0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d
-			};
+		};
 	
 	
-	public static byte translate(byte b)
+	public static byte substitute(byte b)
 	{
-		// x ��һ�� byte������ȡֵ��Χ�� -128~127�����������Ƚ�֮���롱�� 0xff
 		int temp = 0xff & b;
-		
-		// ǿ��ת���� byte ������
+
 		return (byte) sbox[temp];
 	}
 	
 	
-	public static int translate(int x)
+	public static int substitute(int x)
 	{
 		byte[] bs = IBT.int2ByteArray(x);
 		
@@ -71,18 +68,16 @@ public class SBox
 		
 		for (i = 0; i < 4; ++i)
 		{
-			bs[i] = translate(bs[i]);
+			bs[i] = substitute(bs[i]);
 		}
 		
 		return IBT.byteArrayt2Int(bs);
 	}
 	
-	public static byte translate_inv(byte b)
+	public static byte inv_substitute(byte b)
 	{
-		// x ��һ�� byte������ȡֵ��Χ�� -128~127�����������Ƚ�֮���롱�� 0xff
 		int temp = 0xff & b;
-		
-		// ǿ��ת���� byte ������
+
 		return (byte) sbox_inv[temp];
 	}
 

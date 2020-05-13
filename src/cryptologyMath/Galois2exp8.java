@@ -19,6 +19,48 @@ public class Galois2exp8
 	// b1 * b2：算法1
 	public static byte mul(byte b1, byte b2)
 	{
+		// 先针对几个特殊数值，进行快速计算
+
+		if ((0 == b1) || (0 == b2))
+		{
+			return 0;
+		}
+		else
+		{
+			; // 空语句
+		}
+
+		if (1 == b1)
+		{
+			return b2;
+		}
+		else if (2 == b1)
+		{
+			return mul_2(b2);
+		}
+		else
+		{
+			; // 空语句
+		}
+
+
+		if (1 == b2)
+		{
+			return b1;
+		}
+		else if (2 == b2)
+		{
+			return mul_2(b1);
+		}
+		else
+		{
+			; // 空语句
+		}
+
+
+		// 剩下的，才是相对复杂的计算
+
+
 		// 1. 计算 b1 与 byte 基本盘相乘的结果
 		byte [] c1 = mul_base(b1);
 

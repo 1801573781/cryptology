@@ -20,13 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/AESException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AESException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/package-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hash/CTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Boolean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Calc$1.class" beforeDir="false" />
@@ -36,24 +31,9 @@
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFnCal.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/IBT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Polynomial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Prime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logicalOper/Shift.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/SBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/SBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Boolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/ByteBooleanOper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Calc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/CalcMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/CalcMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Euclid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/GFnCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/GFnCal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/GFpCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/GFpCal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Galois.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/IBT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/IBT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Polynomial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Prime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Prime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalOper/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Shift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +114,7 @@
       <workItem from="1589081028221" duration="576000" />
       <workItem from="1589081642237" duration="1197000" />
       <workItem from="1589155362521" duration="25157000" />
-      <workItem from="1589285127815" duration="43000" />
+      <workItem from="1589285127815" duration="3296000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -262,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589155395107</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="test">
+      <created>1589285267332</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589285267332</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +289,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="290" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589170786993" />
+    <state x="737" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589330251403">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="737" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1589330251403" />
     <state x="1035" y="222" key="#xdebugger.evaluate" timestamp="1588346658325">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -373,11 +364,11 @@
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589240686043" />
     <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589285170303" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589155444511">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589285281412">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589155444511" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1588664159011" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1589285281412" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
