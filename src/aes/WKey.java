@@ -31,7 +31,7 @@ public class WKey
 	public int[] genWKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
 		assert(null != key);
-		assert(key.length == (len.len() * 32));
+		assert(key.length == (len.len() * 4));
 
 
 		origin_key_len_word = len.len();

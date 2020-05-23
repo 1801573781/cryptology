@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/cryptologyBase/Padding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/AESException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AESException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/WKey$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hash/CTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Boolean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Calc$1.class" beforeDir="false" />
@@ -37,10 +35,7 @@
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/GFpCal.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/AES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aes/AES_KEY_LEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/AES_KEY_LEN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cryptologyMath/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Shift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +120,7 @@
       <workItem from="1589379653201" duration="872000" />
       <workItem from="1589416173184" duration="598000" />
       <workItem from="1589800950219" duration="9391000" />
-      <workItem from="1590193908255" duration="2279000" />
+      <workItem from="1590193908255" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -281,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589379715417</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test">
+      <created>1590196295125</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590196295125</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,10 +402,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="397" y="184" key="NewModule_or_Project.wizard/0.0.1500.960@0.0.1500.960" timestamp="1589416030120" />
-    <state x="452" y="195" key="SettingsEditor" timestamp="1589379802795">
+    <state x="452" y="195" key="SettingsEditor" timestamp="1590196214956">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="452" y="195" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1589379802795" />
+    <state x="452" y="195" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1590196214956" />
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589240686043" />
     <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589331438977" />
     <state x="431" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589379814406">

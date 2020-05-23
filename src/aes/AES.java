@@ -1,15 +1,17 @@
 package aes;
 
+import cryptologyBase.*;
 
 
 
 public class AES 
 {
-	// ��Կ����
+	// 原始密钥长度
 	private AES_KEY_LEN key_len = AES_KEY_LEN.AES_256;		
 	
 	// 加密轮数
 	private int round = 0;
+
 	
 	// 数据块大小，4 word，16 bytes，128 bits
 	private final int block_size = 4;
@@ -66,51 +68,51 @@ public class AES
 		// 1. 密钥长度
 		key_len = len;
 		
-		// 2. 初始化加密轮数
-		initRound();
+
 		
 		// 3. 扩展密钥（生成加密密钥）
 		generateWorkKey(len, key);
 	}
 	
 	
-	private int initRound()
+	private int initRound(byte[] key)
 	{
-		switch (key_len)
+		assert(null != key);
+
+		int len = key.length;
+
+		if ((AES_KEY_LEN.AES_128.len() * 4) == len)
 		{
-		case AES_128:
+			key_len = AES_KEY_LEN.AES_128;
 			round = 10;
-			break;
-			
-		case AES_192:
-			round = 12;
-			break;
-			
-		case AES_256:
-		default:
-			round = 14;
-			break;						
 		}
-		
+		else if ((AES_KEY_LEN.AES_192.len() * 4) == len)
+		{
+			key_len = AES_KEY_LEN.AES_192;
+			round = 12;
+		}
+		else if ((AES_KEY_LEN.AES_256.len() * 4) == len)
+		{
+			key_len = AES_KEY_LEN.AES_256;
+			round = 14;
+		}
+		else
+		{
+			return -1;
+		}
+
 		return 0;
+
 	}
 
 	
 	
 	private int generateWorkKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
-		if (null == key)
-		{
-			throw new AESException("key is null");
-		}
+		assert(null == key);
 
 		// key_len 的长度单位是 word（4个 byte）
-		if ((key_len.len() * 4) != key.length)
-		{
-			String s = String.format("key len(%d) is not eaqual %d", key.length, (len.len() * 4));
-
-			throw new AESException(s);
-		}
+		assert((key_len.len() * 4) == key.length);
 
 		WKey wkey = new WKey();
 
@@ -127,12 +129,34 @@ public class AES
 	}
 
 
-	public byte[] encrypt(byte[] b)
+	public byte[] encrypt(byte[] key, byte[] plainText)
 	{
+		assert(null != key);
+		assert(null != plainText);
+
+		// 1. 初始化加密轮数
+		initRound(key);
+
+		// 2. 扩展密钥（生成加密密钥）
+		try
+		{
+			generateWorkKey(key_len, key);
+		}
+		catch(AESException e)
+		{
+			return null;
+		}
+
+		// 3. 明文补齐
+		byte[] plainTextPadding = Padding.pkcs7Padding(plainText);
+
 
 
 		return null;
 	}
+
+
+
 
 
 
