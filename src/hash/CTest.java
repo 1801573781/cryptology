@@ -163,6 +163,22 @@ public class CTest
 		byte bbb = Galois2exp8.div((byte)28, (byte)56);
 		Galois2exp8.printUnsignedByteln(bbb);
 
+		System.out.println("2 * 36");
+		bbb = Galois2exp8.mul((byte)2,(byte)0x36);
+		Galois2exp8.printUnsignedByteln(bbb);
+
+		System.out.println("2 * bbb");
+		bbb = Galois2exp8.mul((byte)2,bbb);
+		Galois2exp8.printUnsignedByteln(bbb);
+
+		System.out.println("2 * bbb");
+		bbb = Galois2exp8.mul((byte)2,bbb);
+		Galois2exp8.printUnsignedByteln(bbb);
+
+		System.out.println("2 * bbb");
+		bbb = Galois2exp8.mul((byte)2,bbb);
+		Galois2exp8.printUnsignedByteln(bbb);
+
 
 	}
 }

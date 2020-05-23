@@ -8,16 +8,16 @@ public class AES
 	// ��Կ����
 	private AES_KEY_LEN key_len = AES_KEY_LEN.AES_256;		
 	
-	// �����ִ�
+	// 加密轮数
 	private int round = 0;
 	
-	// �ֿ鳤�ȣ�4 �� int���൱�� 128 bits
+	// 数据块大小，4 word，16 bytes，128 bits
 	private final int block_size = 4;
 	
-	// ԭʼ��Կ
+	// 原始密钥
 	private byte[] orign_key = null;
 	
-	// ԭʼ��Կת�������Կ
+	// 工作密钥（扩展密钥）
 	private int[] W = null;
 	
 	private final int[] sbox =
@@ -63,17 +63,14 @@ public class AES
 	
 	public AES(AES_KEY_LEN len, byte[] key) throws AESException
 	{		
-		// 1. ��ʼ����Կ����
+		// 1. 密钥长度
 		key_len = len;
 		
-		// 2�������������Կ���ȣ���ʼ�������ִ�
+		// 2. 初始化加密轮数
 		initRound();
 		
-		// 3����ʼ��ԭʼ��Կ����Ҫ�����Ϸ����ж�
-		initOriginKey(len, key);				
-		
-		// 3. ���ɹ�����Կ
-		generateWorkKey();
+		// 3. 扩展密钥（生成加密密钥）
+		generateWorkKey(len, key);
 	}
 	
 	
@@ -82,56 +79,44 @@ public class AES
 		switch (key_len)
 		{
 		case AES_128:
-			// ��Կ���� 4 �� int���൱�� 128 bits			
-			// �����ִΣ�10
 			round = 10;
 			break;
 			
 		case AES_192:
-			// ��Կ���� 6 �� int���൱�� 192 bits			
-			// �����ִΣ�12
 			round = 12;
 			break;
 			
 		case AES_256:
 		default:
-			// ��Կ���� 8 �� int���൱�� 256 bits			
-			// �����ִΣ�14
 			round = 14;
 			break;						
 		}
 		
 		return 0;
 	}
+
 	
 	
-	private int initOriginKey(AES_KEY_LEN len, byte[] key) throws AESException
+	private int generateWorkKey(AES_KEY_LEN len, byte[] key) throws AESException
 	{
 		if (null == key)
 		{
 			throw new AESException("key is null");
 		}
-		
-		// 1�� byte�� 8�� bits
-		if ((key.length * 8) != key_len.len())
+
+		// key_len 的长度单位是 word（4个 byte）
+		if ((key_len.len() * 4) != key.length)
 		{
-			String s = String.format("key len(%d) is not eaqual %d", (key.length * 8), len.len()); 
-					
+			String s = String.format("key len(%d) is not eaqual %d", key.length, (len.len() * 4));
+
 			throw new AESException(s);
 		}
-		
-		orign_key = key;
-		
-		return 0;
-	}
-	
-	
-	private int generateWorkKey() throws AESException
-	{
+
 		WKey wkey = new WKey();
+
 		try
 		{		
-			W = wkey.genWKey(key_len, orign_key);
+			W = wkey.genWKey(len, key);
 		}
 		catch(AESException e)
 		{
@@ -140,5 +125,16 @@ public class AES
 
 		return 0;
 	}
+
+
+	public byte[] encrypt(byte[] b)
+	{
+
+
+		return null;
+	}
+
+
+
 
 }

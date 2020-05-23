@@ -2,9 +2,10 @@ package aes;
 
 public enum AES_KEY_LEN 
 {
-	AES_128(128),
-	AES_192(192),
-	AES_256(256);
+	// 长度单位是 word
+	AES_128(4), // 128 bits
+	AES_192(6), // 192 bits
+	AES_256(8); // 256 bits
 	
 	private int key_len = 0;
 	

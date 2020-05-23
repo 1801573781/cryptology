@@ -3,12 +3,12 @@ package cryptologyMath;
 public class Shift 
 {
 	
-	// int ѭ������
+	// int 循环左移 s 位
+	// 由于 int，byte 的循环左移算法都是相同的
+	// 只是 s % len 涉及到 len
+	// 而 int, byte 的 len 不同，所以 将 len 作为 参数传入
 	public static int rotateLeftShift(int x, int s, int len)
 	{
-		// int, byte ��ѭ�����ƣ���ʹ��������������� byte ��ת���� int ���ô˺���
-		// len ��ʶ x ��ԭ��������ռ�еı������������� byte���� len ���� 8
-		
 		assert(s >= 0);
 		assert((8 == len) || (32 == len));
 		
@@ -18,7 +18,7 @@ public class Shift
 	}	
 	
 	
-	// int ѭ������
+	// int 循环左移 s 位，不带 len 参数
 	public static int rotateLeftShift(int x, int s)
 	{
 		return rotateLeftShift(x, s, 32);
@@ -38,7 +38,7 @@ public class Shift
 		return (byte)x;
 	}		
 	
-	// byte ����
+	// byte 左移 s 位，不带 len 参数
 	public static byte leftShift(byte b, int s)
 	{
 		assert(s >= 0);
@@ -53,9 +53,9 @@ public class Shift
 	}		
 	
 	
-	// int ���飬ѭ������
-	// �� x[0] ... x[s-1] �ŵ� x[] �Ķ�β
-	// ���磺[1,2,3,4]��ѭ������2λ����ɣ�[3,4,1,2]
+	// int array 循环左移 s 位
+	// x[0] ... x[s-1] x[s] x[s+1] ... x[n-1] =》x[s] x[s+1] ... x[n-1] x[0] x[1] ... x[s-1]
+	// 比如 [1,2,3,4] 左移2位，变成 [3,4,1,2]
 	public static int[] rotateLeftShift(int[] x, int s)
 	{
 		assert(null != x);
@@ -63,108 +63,53 @@ public class Shift
 				
 		int len = x.length;
 		
-		// 1. �� s �� len ȡ�ࡣ��Ϊ len ��������ѭ�� ���ƣ�x[] ���ֲ���
+		// 1. 如果 s 比数组的 size 大，则 s 取模
 		s = s % len;
 		
-		// 2. ��� s == 0����ô�͵���û���ƶ�
+		// 2. 如果 s 等于0，直接 return
 		if (0 == s)
 		{
 			return x;
 		}
 		
-		// 3. x[s] ����� x[0]���������ơ���������ʱ�ȴ������ʱ���� tmp1 ��
-		int i;
-		int m = len -s;
+		// 3. 循环左移
 		int[] y = new int[len];
-			
-		
-		for (i = 0; i < m; ++i)
-		{
-			y[i] = x[s + i];
-			
-		}
-		
-		// 4. x[len - s] ����� x[0]���Դ�����		
-		for (i = 0; i < s; ++i)
-		{
-			y[m + i] = x[i];
-		}							
+
+		System.arraycopy(x, s, y, 0, (len - s));
+		System.arraycopy(x, 0, y, (len - s), s);
 		
 		return y;
 	}	
 	
 	
-	// byte ���飬ѭ������
-	// �� x[0] ... x[s-1] �ŵ� x[] �Ķ�β
-	// ���磺[1,2,3,4]��ѭ������2λ����ɣ�[3,4,1,2]
-	// Ϊ�˴��븴�ã���Ҫ�Ǹ����߼����㣬��Ϊֻ�������еĻ�����������д������û�н�Լ���ٴ����ϣ�����������Ч��	
+	// byte array 数组循环左移
+	// x[0] ... x[s-1] x[s] x[s+1] ... x[n-1] =》x[s] x[s+1] ... x[n-1] x[0] x[1] ... x[s-1]
+	// 比如 [1,2,3,4] 左移2位，变成 [3,4,1,2]
 	public static byte[] rotateLeftShift(byte[] b, int s)
 	{
 		assert(null != b);
-		
+
+		assert(0 <= s);
+
 		int len = b.length;
-		
-		int[] x = new int[len];
-		
-		int i;
-		
-		for (i = 0; i < len; ++i)
-		{
-			x[i] = IBT.byte2Int(b[i]);
-		}
-		
-		int[] y = rotateLeftShift(x, s);
-		
-		byte[] c = new byte[len];
-		
-		for (i = 0; i < len; ++i)
-		{
-			c[i] = IBT.int2SingleByte(y[i]);
-		}
-		
-		return c;		
-	}
-	
-	
-	// byte ���飬ѭ������
-	// �� x[0] ... x[s-1] �ŵ� x[] �Ķ�β
-	// ���磺[1,2,3,4]��ѭ������2λ����ɣ�[3,4,1,2]
-	// Ϊ�˴���Ч�ʣ��������ظ�
-	public static byte[] rotateLeftShiftB(byte[] x, int s)
-	{
-		assert(null != x);
-		assert(0 <= s);		
-				
-		int len = x.length;
-		
-		// 1. �� s �� len ȡ�ࡣ��Ϊ len ��������ѭ�� ���ƣ�x[] ���ֲ���
+
+		// 1. 如果 s 比数组的 size 大，则 s 取模
 		s = s % len;
-		
-		// 2. ��� s == 0����ô�͵���û���ƶ�
+
+		// 2. 如果 s 等于0，直接 return
 		if (0 == s)
 		{
-			return x;
+			return b;
 		}
-		
-		// 3. x[s] ����� x[0]���������ơ���������ʱ�ȴ������ʱ���� tmp1 ��
-		int i;
-		int m = len -s;
+
+		// 3. 循环左移
 		byte[] y = new byte[len];
-			
-		
-		for (i = 0; i < m; ++i)
-		{
-			y[i] = x[s + i];
-			
-		}
-		
-		// 4. x[len - s] ����� x[0]���Դ�����		
-		for (i = 0; i < s; ++i)
-		{
-			y[m + i] = x[i];
-		}							
-		
+
+		System.arraycopy(b, s, y, 0, (len - s));
+		System.arraycopy(b, 0, y, (len - s), s);
+
 		return y;
-	}			
+	}
+
 
 }
