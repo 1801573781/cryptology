@@ -102,7 +102,7 @@ public class WKey
 				tmp = SBox.substitute(tmp);
 				
 				// 3. XOR
-				tmp ^= this.rc[i - 1];
+				tmp ^= this.rc[i / 4 - 1];
 			}
 			else if ((6 < origin_key_len_word) && (4 == i % origin_key_len_word))
 			{

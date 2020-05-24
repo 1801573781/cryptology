@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d6c1926-fa5d-4a8b-8a7d-ff5e29282052" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/aes/BMPTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/AES$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/AES.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/AESException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AESException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/AES_KEY_LEN.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/SBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/SBox.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aes/WKey$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/aes/WKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aes/WKey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hash/CTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hash/CTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Boolean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Calc$1.class" beforeDir="false" />
@@ -36,6 +40,9 @@
       <change beforePath="$PROJECT_DIR$/bin/logicalOper/Galois.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/AES.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aes/WKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aes/WKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/Galois2exp8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cryptologyMath/IBT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptologyMath/IBT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash/CTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash/CTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +127,8 @@
       <workItem from="1589379653201" duration="872000" />
       <workItem from="1589416173184" duration="598000" />
       <workItem from="1589800950219" duration="9391000" />
-      <workItem from="1590193908255" duration="4454000" />
+      <workItem from="1590193908255" duration="10719000" />
+      <workItem from="1590237689818" duration="7735000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587902296264</created>
@@ -283,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590196295125</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="test">
+      <created>1590198977914</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1590198977914</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,48 +360,52 @@
     </state>
     <state x="578" y="253" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1589415934440" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587903178430" />
-    <state width="727" height="358" key="GridCell.Tab.0.bottom" timestamp="1589807245876">
+    <state width="496" height="256" key="GridCell.Tab.0.bottom" timestamp="1590279606255">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="727" height="358" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1589807245876" />
+    <state width="496" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1590279606255" />
     <state width="937" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="727" height="358" key="GridCell.Tab.0.center" timestamp="1589807245876">
+    <state width="496" height="256" key="GridCell.Tab.0.center" timestamp="1590279606255">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="727" height="358" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1589807245876" />
+    <state width="496" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1590279606255" />
     <state width="937" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="727" height="358" key="GridCell.Tab.0.left" timestamp="1589807245875">
+    <state width="496" height="256" key="GridCell.Tab.0.left" timestamp="1590279606254">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="727" height="358" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1589807245875" />
+    <state width="496" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1590279606254" />
     <state width="937" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="727" height="358" key="GridCell.Tab.0.right" timestamp="1589807245876">
+    <state width="496" height="256" key="GridCell.Tab.0.right" timestamp="1590279606255">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="727" height="358" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1589807245876" />
+    <state width="496" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1590279606255" />
     <state width="937" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854477" />
-    <state width="937" height="268" key="GridCell.Tab.1.bottom" timestamp="1589269180937">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="496" height="256" key="GridCell.Tab.1.bottom" timestamp="1590279606390">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state width="496" height="256" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1590279606390" />
     <state width="937" height="268" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="937" height="268" key="GridCell.Tab.1.center" timestamp="1589269180937">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="496" height="256" key="GridCell.Tab.1.center" timestamp="1590279606390">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state width="496" height="256" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1590279606390" />
     <state width="937" height="268" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="937" height="268" key="GridCell.Tab.1.left" timestamp="1589269180936">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="496" height="256" key="GridCell.Tab.1.left" timestamp="1590279606389">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state width="496" height="256" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1590279606389" />
     <state width="937" height="268" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180936" />
     <state width="1257" height="268" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
-    <state width="937" height="268" key="GridCell.Tab.1.right" timestamp="1589269180937">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="496" height="256" key="GridCell.Tab.1.right" timestamp="1590279606390">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state width="496" height="256" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1590279606390" />
     <state width="937" height="268" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589269180937" />
     <state width="1257" height="268" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1588804854478" />
     <state x="275" y="86" key="MergeDialog" timestamp="1587902588128">
@@ -402,16 +421,16 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="397" y="184" key="NewModule_or_Project.wizard/0.0.1500.960@0.0.1500.960" timestamp="1589416030120" />
-    <state x="452" y="195" key="SettingsEditor" timestamp="1590196214956">
+    <state x="452" y="195" key="SettingsEditor" timestamp="1590279602582">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="452" y="195" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1590196214956" />
+    <state x="452" y="195" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1590279602582" />
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589240686043" />
     <state x="771" y="211" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1589331438977" />
-    <state x="431" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589379814406">
+    <state x="431" y="234" key="Vcs.Push.Dialog.v2" timestamp="1590198987897">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="431" y="234" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1589379814406" />
+    <state x="431" y="234" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1590198987897" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589155444511" />
     <state x="736" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1589330499924" />
     <state x="978" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588379756342">
@@ -433,8 +452,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hash/CTest.java</url>
-          <line>162</line>
-          <option name="timeStamp" value="16" />
+          <line>92</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hash/CTest.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/aes/BMPTest.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hash/CTest.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

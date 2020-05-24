@@ -6,6 +6,8 @@ package hash;
 import aes.*;
 import cryptologyMath.*;
 
+import java.io.IOException;
+
 /**
  * @author lzb
  *
@@ -54,7 +56,17 @@ public class CTest
 		System.out.printf("d = %d\n", d);
 		System.out.printf("e = %d\n", e);
 		System.out.printf("f = %d\n", f);
-		
+
+
+		BMPTest bmpTest = new BMPTest();
+		try
+		{
+			bmpTest.test("D:\\密码学\\book\\AES\\11 AES 加密工作模式\\image\\test.bmp");
+		}
+		catch (IOException ex)
+		{
+			System.out.println(ex.toString());
+		}
 		
 		byte[] key =
 			{
@@ -63,21 +75,19 @@ public class CTest
 					0x09, 0x0a, 0x0b, 0x0c,
 					0x0d, 0x0e, 0x0f, 0x10
 			};
-		
-		int[] W = null;
-		
-		WKey wkey = new WKey();
-		
-		try
-		{		
-			W = wkey.genWKey(AES_KEY_LEN.AES_128, key);
-			
-			int m = 5;
-		}
-		catch(AESException ex)
-		{
-			System.out.println(ex.toString());
-		}
+
+		byte[] plainText =
+			{
+					0x01, 0x02, 0x03, 0x04,
+					0x05, 0x06, 0x07, 0x08,
+					0x09, 0x0a, 0x0b, 0x0c,
+					0x0d, 0x0e, 0x0f, 0x10
+			};
+
+		AES aes = new AES();
+
+		byte[] cipherText = aes.encrypt(key, plainText);
+
 		
 		
 		byte[] x = {1, 2, 3, 4, 5, 6};
@@ -178,6 +188,10 @@ public class CTest
 		System.out.println("2 * bbb");
 		bbb = Galois2exp8.mul((byte)2,bbb);
 		Galois2exp8.printUnsignedByteln(bbb);
+
+
+
+
 
 
 	}

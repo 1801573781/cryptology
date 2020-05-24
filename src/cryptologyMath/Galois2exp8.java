@@ -232,6 +232,40 @@ public class Galois2exp8
 
 		return (byte)d;
 	}
+
+	// 矩阵相乘(性能没有优化)
+	public static byte[][] mul(byte[][] b1, byte[][] b2)
+	{
+		assert(null != b1);
+		assert(null != b2);
+
+		int b1_row = b1.length;
+		int b1_col = b1[0].length;
+
+		int b2_row = b2.length;
+		int b2_col = b2[0].length;
+
+		// b1 的行数，要等于 b2 的列数
+		assert(b1_col == b2_row);
+
+		byte[][] b3 = new byte[b1_row][b2_col];
+
+		int r, c, i;
+
+		for (r = 0; r < b1_row; ++r)
+		{
+			for (c = 0; c < b2_col; ++c)
+			{
+				for (i = 0; i < b2_row; ++i)
+				{
+					b3[r][c] += Galois2exp8.add(b3[r][c], Galois2exp8.mul(b1[r][c], b2[i][c]));
+				}
+
+			}
+		}
+
+		return b3;
+	}
 	
 
 

@@ -26,9 +26,9 @@ public class IBT
 		
 		
 	// 4个 byte，转换成1个 int
-	public static int byteArray2Int(byte b1, byte b2, byte b3, byte b4)
+	public static int byteArray2Int(byte b0, byte b1, byte b2, byte b3)
 	{
-		byte[] b = {b1, b2, b3, b4};
+		byte[] b = {b0, b1, b2, b3};
 		
 		return byteArrayt2Int(b);
 	}
