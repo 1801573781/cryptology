@@ -2,9 +2,7 @@ package aes;
 
 import cryptologyMath.IBT;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class BMPTest
 {
@@ -25,6 +23,12 @@ public class BMPTest
 
     // 图像数据
     private byte[] bmpData = null;
+
+    // 图像加密数据
+    private byte[] bmpCipherData = null;
+
+    // 密钥
+    private byte[] key = null;
 
 
     public BMPTest()
@@ -56,6 +60,21 @@ public class BMPTest
     * */
     public void test(String bmpFile) throws IOException
     {
+        // 1. 初始化 bmp 相关信息
+        initBmpPara(bmpFile);
+
+        // 2. AES 加密
+        encrypt();
+
+        // 3. 将加密后的数据，写到新的 bmp 文件
+        writeCipher2NewBmpFile();
+
+    }
+
+
+    // 初始化 bmp 相关信息
+    private void initBmpPara(String bmpFile) throws IOException
+    {
         FileInputStream fis = new FileInputStream(bmpFile);
         bis = new BufferedInputStream(fis);
 
@@ -71,18 +90,46 @@ public class BMPTest
 
         bmpOffset = IBT.byteArray2Int(header[0x0d], header[0x0c],header[0x0b],header[0x0a]);
 
+        // 读取 bmp 数据
+        bmpSize = fileSize - bmpOffset;
 
+        bmpData = new byte[bmpSize];
+        bis.read(bmpData);
 
+        bis.close();
     }
 
-
-    private void readBmpDataSize()
+    // AES 加密
+    private void encrypt()
     {
+        AES aes = new AES();
 
+        key = new byte[]
+            {
+                0x01, 0x02, 0x03, 0x04,
+                0x05, 0x06, 0x07, 0x08,
+                0x09, 0x0a, 0x0b, 0x0c,
+                0x0d, 0x0e, 0x0f, 0x10
+            };
 
-
-
-
+        bmpCipherData = aes.encrypt(key, bmpData);
     }
+
+
+    // 将加密后的数据，写到新的 bmp 文件
+    private void writeCipher2NewBmpFile() throws java.io.FileNotFoundException, java.io.IOException
+    {
+        String s = fileName.substring(0, (fileName.length() - 4));
+        s += "_test.bmp";
+
+        FileOutputStream fos = new FileOutputStream(s);
+
+        fos.write(header);
+
+        fos.write(bmpCipherData, 0, bmpSize);
+
+        fos.close();
+    }
+
 
 }

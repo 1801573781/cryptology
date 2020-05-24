@@ -61,7 +61,7 @@ public class CTest
 		BMPTest bmpTest = new BMPTest();
 		try
 		{
-			bmpTest.test("D:\\密码学\\book\\AES\\11 AES 加密工作模式\\image\\test.bmp");
+			bmpTest.test("D:\\密码学\\book\\AES\\11 AES 加密工作模式\\image\\a.bmp");
 		}
 		catch (IOException ex)
 		{
